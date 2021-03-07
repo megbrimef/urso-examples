@@ -2,15 +2,16 @@ class AppTemplatesScenesPlay {
     constructor() {
         const _imagePath = 'assets/images/';
 
-        this.assets = [
-            { type: Urso.types.assets.IMAGE, key: 'bottle', path: _imagePath + 'bottle.png'}
-        ];
-
         this.objects = [
             {
-                type: Urso.types.objects.IMAGE,
-                assetKey: 'bottle',
-                x: 500, y: 500
+                type: Urso.types.objects.TEXT,
+                name: 'Hello World',
+                text: 'Some111 test text',
+                fontFamily: 'Arial',
+                fontSize: 36,
+                fill: '#ffffff',
+                x: 500,
+                y: 500
             }
         ];
     };
