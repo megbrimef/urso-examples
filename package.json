@@ -1,0 +1,29 @@
+{
+  "name": "urso-examples",
+  "version": "0.0.1",
+  "description": "urso engine examples",
+  "main": "index.js",
+  "author": "Megbrimef",
+  "license": "MIT",
+  "scripts": {
+    "clear": "rm -rf node_modules/@n yarn.lock && yarn",
+    "start": "webpack serve --mode=development --content-base build/"
+  },
+  "dependencies": {
+    "urso": "^0.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^5.0.3",
+    "exports-loader": "^0.7.0",
+    "html-webpack-plugin": "^4.5.0",
+    "script-loader": "^0.7.2",
+    "source-map-loader": "^1.0.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
