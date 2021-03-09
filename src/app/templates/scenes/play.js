@@ -6,9 +6,9 @@ class AppTemplatesScenesPlay {
             {
                 type: Urso.types.objects.TEXT,
                 name: 'Hello World',
-                text: 'Some111 test text',
+                text: 'Some test text !',
                 fontFamily: 'Arial',
-                fontSize: 36,
+                fontSize: 100,
                 fill: '#ffffff',
                 x: 500,
                 y: 500

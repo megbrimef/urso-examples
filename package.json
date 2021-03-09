@@ -10,7 +10,7 @@
     "start": "webpack serve --mode=development --content-base build/"
   },
   "dependencies": {
-    "urso": "^0.1.0"
+    "@urso/core": "^0.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
