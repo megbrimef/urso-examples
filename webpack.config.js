@@ -1,34 +1,29 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const root = process.cwd();
 
 module.exports = (env, argv) => {
-  const development = argv.mode.toLowerCase() === 'development';
+  const isProduction = argv.mode.toLowerCase() === "production";
 
   const config = {
     entry: {
-      index: path.resolve(root, 'src', 'index.js')
+      index: path.resolve(root, "src", "index.js"),
     },
     output: {
-      path: path.resolve(root, 'build'),
-      filename: path.join('src', 'js', 'index.js'),
-      publicPath: '/'
+      path: path.resolve(root, "build"),
+      filename: path.join("js", "index.js"),
     },
-    watch: true,
-    externals: {
-    },
+    externals: {},
     resolve: {
-      alias: {
-      }
+      alias: {},
     },
     devServer: {
       host: process.platform === "win32" ? "localhost" : "0.0.0.0",
-      contentBase: path.join(root, 'build'),
+      contentBase: path.join(root, "build"),
       open: true,
-      openPage: './index.html',
+      openPage: "./index.html",
       lazy: false,
       inline: true,
       setup(app) {
@@ -37,27 +32,33 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        filename: path.join('index.html'),
-        template: path.resolve(root, 'src', (development ? 'index-dev.html' : 'index.html')),
-        title: 'title2',
+        filename: path.join("index.html"),
+        template: path.resolve(
+          root,
+          "src",
+          isProduction ? "index.html" : "index-dev.html"
+        ),
+        title: "title2",
         templateParameters: {
           //todo
         },
-        inject: 'head',
-        hash: true
+        inject: "head",
+        hash: true,
       }),
-      new CopyPlugin([
-        {
-          from: path.resolve(root, 'src', 'assets'),
-          to: 'assets'
-        }
-      ])
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(root, "src", "assets"),
+            to: "assets",
+          },
+        ],
+      }),
     ],
     module: {
       rules: [
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader'],
+          use: ["style-loader", "css-loader"],
         },
         {
           test: /\.js$/,
@@ -68,11 +69,11 @@ module.exports = (env, argv) => {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader'
-          }
-        }
-      ]
-    }
+            loader: "babel-loader",
+          },
+        },
+      ],
+    },
   };
 
   return config;
