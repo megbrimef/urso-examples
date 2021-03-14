@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "clear": "rm -rf node_modules/@n yarn.lock && yarn",
-    "start": "webpack serve --mode=development --content-base build/"
+    "start": "webpack serve --mode=development --content-base build/",
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production"
   },
   "dependencies": {
     "@urso/core": "^0.1.0"
