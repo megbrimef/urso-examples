@@ -6,7 +6,7 @@
   "author": "Megbrimef",
   "license": "MIT",
   "scripts": {
-    "clear": "rm -rf node_modules/@n yarn.lock && yarn",
+    "clear": "rm -rf node_modules/@urso yarn.lock build && yarn",
     "start": "webpack serve --mode=development --content-base build/",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production"
