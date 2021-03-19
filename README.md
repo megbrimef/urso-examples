@@ -19,11 +19,11 @@ extendingChain uses for namespases extending.
 5) put template file (play.js) into app/templates/scenes.
 Play scene will use by default in our engine
 
-6) put spine assets into src/assets. 
-For example i'll put spine coin into src/assets/spines
+6) put images assets into src/assets. 
+For example i'll put images torch_.png into src/assets/images
 
-7) put asset data into this.assets in the play scene
+7) put assets data into this.assets in the play scene
 
-8) put object data into this.objects in the play scene
+8) put objects data into this.objects in the play scene
 
-9) launch the game and you will see spine animations
+9) launch the game and you will see image
