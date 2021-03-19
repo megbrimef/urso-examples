@@ -26,4 +26,4 @@ For example i'll put images torch_.png into src/assets/images
 
 8) put objects data into this.objects in the play scene
 
-9) launch the game and you will see image
+9) launch the game and you will see images animation
