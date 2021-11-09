@@ -16,13 +16,16 @@ extendingChain uses for namespases extending.
 
 5) put info file (_info.js) into app/templates/scenes to setup sub namespace
 
-5) put template file (play.js) into app/templates/scenes.
+6) put template file (play.js) into app/templates/scenes.
 Play scene will use by default in our engine
 
-6) put container object into this.objects in the play scene
+7) put button textures files into src/assets
 
-7) container have array parameter 'contents' where you can put other objects as a childs
+8) put textures data into this.assets in the play scene
 
-8) childs position calculating from parent container coordinates. 
-Changing container's position will result in recalculation of it's childs coordinates
+9) in the play scene put button object data into this.objects 
+
+10) assign textures keys for button frames
+
+11) launch the game and you will see button
 
