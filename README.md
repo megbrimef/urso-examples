@@ -19,6 +19,10 @@ extendingChain uses for namespases extending.
 5) put template file (play.js) into app/templates/scenes.
 Play scene will use by default in our engine
 
-6) put object data into this.objects in the play scene
+6) put container object into this.objects in the play scene
 
-7) launch the game and you will see image
+7) container have array parameter 'contents' where you can put other objects as a childs
+
+8) childs position calculating from parent container coordinates. 
+Changing container's position will result in recalculation of it's childs coordinates
+
