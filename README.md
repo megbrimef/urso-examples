@@ -16,9 +16,11 @@ extendingChain uses for namespases extending.
 
 5) put info file (_info.js) into app/templates/scenes to setup sub namespace
 
-5) put template file (play.js) into app/templates/scenes.
+6) put template file (play.js) into app/templates/scenes.
 Play scene will use by default in our engine
 
-6) put object data into this.objects in the play scene
+7) put object data into this.objects in the play scene
 
-7) launch the game and you will see image
+8) you can create canvas elements: rectangle and polygon describing it inside graphics data in "figure"
+
+9) launch the game and you will see graphics

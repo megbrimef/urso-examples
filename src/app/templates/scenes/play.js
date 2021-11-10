@@ -4,14 +4,28 @@ class AppTemplatesScenesPlay {
 
         this.objects = [
             {
-                type: Urso.types.objects.TEXT,
-                name: 'Hello World',
-                text: 'Some test text !',
-                fontFamily: 'Arial',
-                fontSize: 100,
-                fill: '#ffffff',
-                x: 500,
-                y: 500
+                type: Urso.types.objects.GRAPHICS,
+                name: 'graphics rectangle example',
+                figure: {
+                    rectangle: [200, 200, 200, 200],
+                    fillColor: 0xFFFFFF
+                }
+            },
+            {
+                type: Urso.types.objects.GRAPHICS,
+                name: 'graphics polygon example',
+                figure: {
+                    polygon: [
+                        500, 400, 
+                        700, 200,
+                        900, 200,
+                        1100, 400,
+                        900, 600,
+                        700, 600,
+                        500, 400
+                    ],
+                    fillColor: 0x0000FFF
+                }
             }
         ];
     };
