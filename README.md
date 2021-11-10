@@ -19,7 +19,8 @@ extendingChain uses for namespases extending.
 6) put template file (play.js) into app/templates/scenes.
 Play scene will use by default in our engine
 
-7) put mask object data into this.objects in the play scene.
-Mask will be limit the visability of objects, in our case of bottle image
+7) put fonts asset in this.assets
 
-8) launch the game and you will see the masked image
+8) put bitmapText object data in this.objects. Use uploaded font's key as fontName
+
+9) launch the game and you will see text
