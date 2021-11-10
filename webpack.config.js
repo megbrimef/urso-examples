@@ -50,6 +50,7 @@ module.exports = (env, argv) => {
           {
             from: path.resolve(root, "src", "assets"),
             to: "assets",
+            noErrorOnMissing: true
           },
         ],
       }),

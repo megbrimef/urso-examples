@@ -19,12 +19,12 @@ extendingChain uses for namespases extending.
 6) put template file (play.js) into app/templates/scenes.
 Play scene will use by default in our engine
 
-7) put atlas asset into src/assets. 
-For example i'll put atlas bottle.json into src/assets/atlases
+7) put group object data in this.objects
 
-8) put asset data into this.assets in the play scene
+8) in app/templates/groups put _info.js to setup sub namespace
 
-9) put object data into this.objects in the play scene. 
-As filenameKey assign image name that described in json file
+9) put your group file in app/templates/groups
 
-10) launch the game and you will see image
+10) in group file you can put any objects in this.objects to create it
+
+11) launch the game and you will see objects that were created in group
