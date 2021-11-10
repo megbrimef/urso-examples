@@ -16,14 +16,17 @@ extendingChain uses for namespases extending.
 
 5) put info file (_info.js) into app/templates/scenes to setup sub namespace
 
-5) put template file (play.js) into app/templates/scenes.
+6) put template file (play.js) into app/templates/scenes.
 Play scene will use by default in our engine
 
-6) put image asset into src/assets. 
-For example i'll put image bottle.png into src/assets/images
+7) put asset into src/assets. 
+For example i'll put dragonBones assets into src/assets/dragonBones
 
-7) put asset data into this.assets in the play scene
+8) put asset data into this.assets in the play scene
 
-8) put object data into this.objects in the play scene
+9) put object data into this.objects in the play scene
 
-9) launch the game and you will see image
+10) set animation options e.g. armature name, default animation, 
+callbacks in object data in "animation" 
+
+11) launch the game and you will see dragonBones animation
