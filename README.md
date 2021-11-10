@@ -16,14 +16,10 @@ extendingChain uses for namespases extending.
 
 5) put info file (_info.js) into app/templates/scenes to setup sub namespace
 
-5) put template file (play.js) into app/templates/scenes.
+6) put template file (play.js) into app/templates/scenes.
 Play scene will use by default in our engine
 
-6) put image asset into src/assets. 
-For example i'll put image bottle.png into src/assets/images
+7) put mask object data into this.objects in the play scene.
+Mask will be limit the visability of objects, in our case of bottle image
 
-7) put asset data into this.assets in the play scene
-
-8) put object data into this.objects in the play scene
-
-9) launch the game and you will see image
+8) launch the game and you will see the masked image
