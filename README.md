@@ -19,8 +19,11 @@ extendingChain uses for namespases extending.
 6) put template file (play.js) into app/templates/scenes.
 Play scene will use by default in our engine
 
-7) put fonts asset in this.assets
+7) put assets in src/assets. For example i'll put in src/assets/emitter 
+config: emitter.json, and textures: Particle_purple.png and Particle_blue.png
 
-8) put bitmapText object data in this.objects. Use uploaded font's key as fontName
+8) put JSON config and texture assets into this.assets in the play scene
 
-9) launch the game and you will see text
+9) put emitter object data in this.objects in the play scene.
+
+10) launch the game and you will see animation

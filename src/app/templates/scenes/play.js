@@ -1,18 +1,22 @@
 class AppTemplatesScenesPlay {
     constructor() {
-        const _fontPath = 'assets/fonts/';
+        const _emitterPath = 'assets/emitter/';
 
         this.assets = [
-            { type: Urso.types.assets.BITMAPFONT, key: 'exampleFont', path: _fontPath + 'exampleFont.fnt'}
+            { type: Urso.types.assets.JSON, key: 'emitterCfg', path: _emitterPath + 'emitter.json'},
+            { type: Urso.types.assets.IMAGE, key: 'purple', path: _emitterPath + 'Particle_purple.png'},
+            { type: Urso.types.assets.IMAGE, key: 'blue', path: _emitterPath + 'Particle_blue.png'}
         ];
 
         this.objects = [
             {
-                type: Urso.types.objects.BITMAPTEXT,
-                fontName: 'exampleFont',
+                type: Urso.types.objects.EMITTER,
+                cfg: 'emitterCfg',
+                textures: ['purple', 'blue'],
                 x: 500, y: 500,
-                text: '1 2 3',
-                fontSize: 100
+                autostart: true,
+                scaleX: 5,
+                scaleY: 5
             },
 
         ];
