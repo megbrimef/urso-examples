@@ -16,15 +16,13 @@ extendingChain uses for namespases extending.
 
 5) put info file (_info.js) into app/templates/scenes to setup sub namespace
 
-5) put template file (play.js) into app/templates/scenes.
+6) put template file (play.js) into app/templates/scenes.
 Play scene will use by default in our engine
 
-6) put atlas asset into src/assets. 
-For example i'll put atlas bottle.json into src/assets/atlases
+7) put object data into this.objects in the play scene. 
+Define hitArea's width and height
 
-7) put asset data into this.assets in the play scene
+8) invisible interactive area will be created. By default hitArea have alpha 0, 
+you can choose alpha 1 to display area and set it more accurately.
 
-8) put object data into this.objects in the play scene. 
-As filenameKey assign image name that described in json file
-
-9) launch the game and you will see image
+9) launch game and see result
