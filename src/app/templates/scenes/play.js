@@ -1,15 +1,16 @@
 class AppTemplatesScenesPlay {
     constructor() {
-        const _imagePath = 'assets/images/';
+        const _atlasPath = 'assets/atlases/';
 
         this.assets = [
-            { type: Urso.types.assets.IMAGE, key: 'bottle', path: _imagePath + 'bottle.png'}
+            { type: Urso.types.assets.ATLAS, key: 'atlas', path: _atlasPath + 'bottle.json'}
         ];
 
         this.objects = [
             {
-                type: Urso.types.objects.IMAGE,
-                assetKey: 'bottle',
+                type: Urso.types.objects.ATLASIMAGE,
+                assetKey: 'atlas',
+                filenameKey: "bottle.png",
                 x: 500, y: 500,
                 scaleX: 3,
                 scaleY: 3
