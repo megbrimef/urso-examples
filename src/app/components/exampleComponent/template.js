@@ -28,7 +28,7 @@ class ComponentsExampleComponentTemplate {
             },
             {
                 type: Urso.types.objects.TEXT,
-                name: 'exampleText',
+                class: 'exampleText',
                 text: 'exampleComponent text',
                 fontFamily: 'Arial',
                 fontSize: 100,
