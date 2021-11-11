@@ -26,5 +26,5 @@ For example i'll put image bottle.png into src/assets/images
 
 9) put object data into this.objects in the play scene.
 
-10) you can set objects scaleX and scaleY to change it's scale 
-where 1 is object's original scale
+10) you can set object's alignX and alignY to change point 
+from which object's position will be calculating
