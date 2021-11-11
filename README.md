@@ -28,4 +28,6 @@ and _info.js where you have to setup sub namespace
 
 10) in template.js you can put objects you want to create into this.objects
 
-11) launch game and you will see result
+11) in controller.js you can put logic
+
+12) launch game and you will see result

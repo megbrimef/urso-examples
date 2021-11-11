@@ -12,8 +12,8 @@ class ComponentsExampleComponentTemplate {
         this.objects = [
             {
                 type: Urso.types.objects.BUTTON,
-                componentName: 'exampleComponent',
-                x: 500,
+                name: 'exampleButton',
+                x: 300,
                 y: 500,
                 anchorX: 0.5,
                 anchorY: 0.5,
@@ -28,7 +28,7 @@ class ComponentsExampleComponentTemplate {
             },
             {
                 type: Urso.types.objects.TEXT,
-                name: 'Hello World',
+                name: 'exampleText',
                 text: 'exampleComponent text',
                 fontFamily: 'Arial',
                 fontSize: 100,
