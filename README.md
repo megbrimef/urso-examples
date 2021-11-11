@@ -26,4 +26,7 @@ For example i'll put image bottle.png into src/assets/images
 
 8) put object data into this.objects in the play scene
 
-9) launch the game and you will see image
+9) set x and y params to change object's position. You can set it 
+as number or as percents and engine will calculate object's position relatively scene size 
+
+10) launch the game and you will see image
