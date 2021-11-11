@@ -26,8 +26,11 @@ Play scene will use by default in our engine
 9) create component folder in app/components. Folder might content controller.js, template.js 
 and _info.js where you have to setup sub namespace
 
-10) in template.js you can put objects you want to create into this.objects
+10) in template.js you can put objects you want to create into this.objects.
+In this case we're creating container named 'parentContainer' to store 
+there objects that we gonna create lately
 
-11) in controller.js you can put logic
+11) in controller.js you can create objects dynamicly using Urso.objects.create(model, parent).
+In this example we're creating text object with parent 'parentContainer'
 
 12) launch game and you will see result

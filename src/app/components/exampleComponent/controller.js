@@ -1,19 +1,21 @@
 class ComponentsExampleComponentController extends Urso.Core.Components.Base.Controller {
 
     create(){
-        this.text = this.common.findOne('^exampleText')
+        let parent = this.common.findOne('^parentContainer');
+        this._createTextObject(parent);
     }
 
-    _buttonPressHandler({name}){
-        if(name !== 'exampleButton')
-            return
-
-        this.text.x = Urso.math.getRandomIntBetween(500, 1000);
-        this.text.y = Urso.math.getRandomIntBetween(100, 1000);
-    }
-
-    _subscribeOnce() {
-        this.addListener(Urso.events.MODULES_OBJECTS_BUTTON_PRESS, this._buttonPressHandler.bind(this));
+    _createTextObject(parent){
+        Urso.objects.create(
+            {
+                type: Urso.types.objects.TEXT,
+                text: 'dynamicly created text',
+                fontFamily: 'Arial',
+                fontSize: 100,
+                fill: '#ffffff',
+                x: 700,
+                y: 600
+            }, parent)
     }
 }
 
