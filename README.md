@@ -27,7 +27,7 @@ Play scene will use by default in our engine
 and _info.js where you have to setup sub namespace
 
 10) in template.js you can put objects you want to create into this.objects.
-I've created button named 'exampleButton', and text object with id 'exampleText'
+I've created button named 'exampleButton', and text object with name 'exampleText'
 
 11) to find created object use next functions: 
 this.common.find - returns array of objects that created inside component,
