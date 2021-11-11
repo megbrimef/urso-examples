@@ -26,4 +26,4 @@ For example i'll put image bottle.png into src/assets/images
 
 9) put object data into this.objects in the play scene.
 
-10) you can set object's 'visible' option to 'false' to hide object
+10) you can set object's alpha from 0 to 1, where 0 is absolutely transparent
