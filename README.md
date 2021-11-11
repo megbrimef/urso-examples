@@ -41,7 +41,7 @@ additional logic names
 15) to subscribe to the event use this.addListener(string: 'eventName', function: callback, boolean: global). 
 We recomend put it into the method _subscribeOnce() that will be called on create
 
-16) to fire event use method this.emit('eventName', arguments). In our case on button 
+16) to fire event use method this.emit('eventName', arguments, delay). In our case on button 
 press we're firing event 'change.text.position' with new coordinates as argument.
 
 17) launch game and you will see result
