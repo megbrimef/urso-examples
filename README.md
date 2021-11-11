@@ -35,6 +35,6 @@ this.common.findOne - returns first found object
 this.common.findAll - returns array of objects
 
 in our case on button press we're using all functions in turn to change text,
-searching object using it's name with selector '^'
+searching object by it's name with selector '^'
 
 12) launch game. Pressing the button you'll see result
