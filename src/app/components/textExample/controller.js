@@ -10,7 +10,7 @@ class ComponentsTextExampleController extends Urso.Core.Components.Base.Controll
     }
 
     _subscribeOnce() {
-        this.addListener('change.text.position', this._changeTextPosition.bind(this));
+        this.addListener('components.textExample.changeTextPosition', this._changeTextPosition.bind(this));
     }
 }
 

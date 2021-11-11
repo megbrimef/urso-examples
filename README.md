@@ -28,12 +28,20 @@ and _info.js where you have to setup sub namespace
 
 10) in template.js you can put objects you want to create into this.objects
 
-11) to subscribe to the event use this.addListener('eventName', callback). We recomend put it
-into the method _subscribeOnce() that will be called on component create
+11) put info file (_info.js) into app/modules to setup sub namespace
 
-12) to fire event use method this.emit('eventName', arguments). In our case on button 
+12) put info file (_info.js) into app/modules/logic to setup sub namespace
+
+13) create file of additional logic layer where will be processing events.
+In our case it exampleLogic.js
+
+14) in app/modules/logic/controller.js in method getAdditionalLogicBlocks return array of
+additional logic names
+
+15) to subscribe to the event use this.addListener(string: 'eventName', function: callback, boolean: global). 
+We recomend put it into the method _subscribeOnce() that will be called on create
+
+16) to fire event use method this.emit('eventName', arguments). In our case on button 
 press we're firing event 'change.text.position' with new coordinates as argument.
-In this case components communicating directly, but we recommend to use logic layer
-to separate components logic from each other
 
-13) launch game and you will see result
+17) launch game and you will see result
