@@ -27,7 +27,8 @@ Play scene will use by default in our engine
 and _info.js where you have to setup sub namespace
 
 10) in template.js you can put objects you want to create into this.objects.
-I've created button named 'exampleButton', and text object with id 'exampleText'
+I've created button named 'exampleButton', and text object with class 'exampleText',
+inside two parent containers with name 'parent1' and id 'parent2'
 
 11) to find created object use next functions: 
 this.common.find - returns array of objects that created inside component,
@@ -35,6 +36,6 @@ this.common.findOne - returns first found object
 this.common.findAll - returns array of objects
 
 in our case on button press we're using all functions in turn to change text,
-searching object using it's class with selector '.'
+searching object inside it's parent containers using composite selector '^parent1 #parent2 .exampleText'
 
 12) launch game. Pressing the button you'll see result
