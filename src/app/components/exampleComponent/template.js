@@ -26,28 +26,6 @@ class ComponentsExampleComponentTemplate {
                     disabled: 'hoover'
                 },
             },
-            {
-                type: Urso.types.objects.CONTAINER,
-                name: 'parent1',
-                contents: [
-                    {
-                        type: Urso.types.objects.CONTAINER,
-                        id: 'parent2',
-                        contents: [
-                            {
-                                type: Urso.types.objects.TEXT,
-                                class: 'exampleText',
-                                text: 'exampleComponent text',
-                                fontFamily: 'Arial',
-                                fontSize: 100,
-                                fill: '#ffffff',
-                                x: 600,
-                                y: 450
-                            }
-                        ]
-                    }
-                ]
-            }
         ];
     }
 }
