@@ -4,7 +4,11 @@ class AppTemplatesScenesPlay {
         this.objects = [
             {
                 type: Urso.types.objects.COMPONENT,
-                componentName: 'exampleComponent'
+                componentName: 'buttonExample'
+            },
+            {
+                type: Urso.types.objects.COMPONENT,
+                componentName: 'textExample'
             },
         ];
     };

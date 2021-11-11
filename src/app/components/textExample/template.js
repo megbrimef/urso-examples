@@ -1,4 +1,4 @@
-class ComponentsExampleComponentTemplate {
+class ComponentsTextExampleTemplate {
     constructor() {
 
         const _imagePath = 'assets/images/';
@@ -10,22 +10,6 @@ class ComponentsExampleComponentTemplate {
         ]
 
         this.objects = [
-            {
-                type: Urso.types.objects.BUTTON,
-                name: 'exampleButton',
-                x: 300,
-                y: 500,
-                anchorX: 0.5,
-                anchorY: 0.5,
-                scaleX: 2,
-                scaleY: 2,
-                buttonFrames: {
-                    over: 'hoover',
-                    out: 'out',
-                    pressed: 'pressed',
-                    disabled: 'hoover'
-                },
-            },
             {
                 type: Urso.types.objects.TEXT,
                 name: 'exampleText',
@@ -40,4 +24,4 @@ class ComponentsExampleComponentTemplate {
     }
 }
 
-module.exports = ComponentsExampleComponentTemplate;
+module.exports = ComponentsTextExampleTemplate;

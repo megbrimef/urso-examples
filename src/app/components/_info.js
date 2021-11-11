@@ -1,2 +1,3 @@
 Urso.App.Components = {};
-require('./exampleComponent/_info.js');
+require('./buttonExample/_info.js');
+require('./textExample/_info.js');
