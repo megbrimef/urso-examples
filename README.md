@@ -26,6 +26,5 @@ For example i'll put image bottle.png into src/assets/images
 
 9) put object data into this.objects in the play scene.
 
-10) you can set anchorX and anchorY from 0 to 1, to set anchor coordinates
-relative object's width and height. 
-In this example we're using 3 images with a various anchor settings
+10) you can set objects scaleX and scaleY to change it's scale 
+where 1 is object's original scale

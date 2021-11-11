@@ -10,24 +10,26 @@ class AppTemplatesScenesPlay {
             {
                 type: Urso.types.objects.IMAGE,
                 assetKey: 'bottle',
-                x: 700, 
-                y: 200,
-            },
-            {
-                type: Urso.types.objects.IMAGE,
-                assetKey: 'bottle',
-                x: 700, 
+                x: 300, 
                 y: 500,
-                anchorX: 0.5,
-                anchorY: 0.5
+                scaleX: 0.5,
+                scaleY: 0.5
             },
             {
                 type: Urso.types.objects.IMAGE,
                 assetKey: 'bottle',
-                x: 700, 
-                y: 800,
-                anchorX: 1,
-                anchorY: 1
+                x: 600, 
+                y: 500,
+                scaleX: 1,
+                scaleY: 1
+            },
+            {
+                type: Urso.types.objects.IMAGE,
+                assetKey: 'bottle',
+                x: 900, 
+                y: 500,
+                scaleX: 2,
+                scaleY: 2
             }
         ];
     };
