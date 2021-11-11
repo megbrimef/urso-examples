@@ -28,13 +28,13 @@ class ComponentsExampleComponentTemplate {
             },
             {
                 type: Urso.types.objects.TEXT,
-                name: 'exampleText',
+                id: 'exampleText',
                 text: 'exampleComponent text',
                 fontFamily: 'Arial',
                 fontSize: 100,
                 fill: '#ffffff',
-                x: 700,
-                y: 600
+                x: 600,
+                y: 450
             }
         ];
     }

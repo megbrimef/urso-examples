@@ -1,15 +1,33 @@
 class ComponentsExampleComponentController extends Urso.Core.Components.Base.Controller {
-
-    create(){
-        this.text = this.common.findOne('^exampleText')
+    constructor(){
+        super();
+        this.counter = 0;
     }
 
     _buttonPressHandler({name}){
         if(name !== 'exampleButton')
             return
 
-        this.text.x = Urso.math.getRandomIntBetween(500, 1000);
-        this.text.y = Urso.math.getRandomIntBetween(100, 1000);
+        let textObject;
+
+        switch (this.counter) {
+            case 0:
+                textObject = this.common.find('#exampleText')[0];
+                textObject.text = 'changed using find';
+                this.counter++
+                break;
+            case 1:
+                textObject = this.common.findOne('#exampleText');
+                textObject.text = 'changed using findOne';
+                this.counter++
+                break;
+            case 2:
+                textObject = this.common.findAll('#exampleText')[0];
+                textObject.text = 'changed using findAll';
+                this.counter = 0
+            default:
+                break;
+        }
     }
 
     _subscribeOnce() {

@@ -26,8 +26,15 @@ Play scene will use by default in our engine
 9) create component folder in app/components. Folder might content controller.js, template.js 
 and _info.js where you have to setup sub namespace
 
-10) in template.js you can put objects you want to create into this.objects
+10) in template.js you can put objects you want to create into this.objects.
+I've created button named 'exampleButton', and text object with id 'exampleText'
 
-11) in controller.js you can put logic
+11) to find created object use next functions: 
+this.common.find - returns array of objects that created inside component,
+this.common.findOne - returns first found object
+this.common.findAll - returns array of objects
 
-12) launch game and you will see result
+in our case on button press we're using all functions in turn to change text,
+searching object using it's id with selector '#'
+
+12) launch game. Pressing the button you'll see result
