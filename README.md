@@ -27,10 +27,10 @@ Play scene will use by default in our engine
 and _info.js where you have to setup sub namespace
 
 10) in template.js you can put objects you want to create into this.objects.
-I've created button named 'exampleButton'
+I've created button named 'exampleButton' and text 'exampleText'
 
-11) to find object outside of component in which you try to find it use
-global method Urso.find(). In our example we're searching text object created 
-on play scene from exampleComponent using composite selector '^parent1 #parent2 .exampleText'
+11) you can get instance of another class via this.getInstance(), 
+with path or name setted in _info.js as argument.
+In our case we've stored text into config.js inside exampleComponent
 
 12) launch game. Pressing the button you'll see result

@@ -1,16 +1,17 @@
 class ComponentsExampleComponentController extends Urso.Core.Components.Base.Controller {
     constructor(){
         super();
-        this.buttonPressed = false
+        this.buttonPressed = false;
+        this.config = this.getInstance('Config');
     }
 
     _buttonPressHandler({name}){
         if(name !== 'exampleButton')
             return
 
-        let textObject = Urso.find('^parent1 #parent2 .exampleText')[0];
-        textObject.text = this.buttonPressed ? 'example' : 'changed with Urso.find()';
-        this.buttonPressed = !this.buttonPressed 
+        let textObject = this.common.findOne('^exampleText');
+        textObject.text = this.buttonPressed ? 'example' : this.config.getText();
+        this.buttonPressed = !this.buttonPressed;
     }
 
     _subscribeOnce() {

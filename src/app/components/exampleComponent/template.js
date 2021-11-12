@@ -26,6 +26,16 @@ class ComponentsExampleComponentTemplate {
                     disabled: 'hoover'
                 },
             },
+            {
+                type: Urso.types.objects.TEXT,
+                name: 'exampleText',
+                text: 'example',
+                fontFamily: 'Arial',
+                fontSize: 100,
+                fill: '#ffffff',
+                x: 600,
+                y: 450
+            }
         ];
     }
 }
