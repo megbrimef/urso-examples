@@ -29,7 +29,7 @@
   "meta": {
     "app": "http://github.com/odrick/free-tex-packer-core",
     "version": "0.3.4",
-    "image": "png_0.png",
+    "image": "bottle.png",
     "format": "RGBA8888",
     "size": {
       "w": 233,
