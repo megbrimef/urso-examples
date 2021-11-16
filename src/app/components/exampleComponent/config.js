@@ -1,7 +1,7 @@
 class ComponentsExampleComponentConfig {
     
     getText(){
-        return 'text from instance';    
+        return 'text from getByPath';    
     }
 }
 

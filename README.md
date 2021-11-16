@@ -29,8 +29,7 @@ and _info.js where you have to setup sub namespace
 10) in template.js you can put objects you want to create into this.objects.
 I've created button named 'exampleButton' and text 'exampleText'
 
-11) you can get instance of another class via this.getInstance(), 
-with path or name setted in _info.js as argument.
-In our case we've stored text into config.js inside exampleComponent
+11) you can get constructor of another class via Urso.getByPath(), 
+with path as argument. In our case we've stored text into config.js inside exampleComponent
 
 12) launch game. Pressing the button you'll see result
