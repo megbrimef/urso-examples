@@ -2,8 +2,8 @@ class ComponentsExampleComponentController extends Urso.Core.Components.Base.Con
     constructor(){
         super();
         this.buttonPressed = false;
-        let configConstructor = Urso.getByPath('Components.ExampleComponent.Config');
-        this.config = new configConstructor;
+
+        this.config = this.getInstance('Config');
     }
 
     _buttonPressHandler({name}){

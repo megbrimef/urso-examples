@@ -29,7 +29,16 @@ and _info.js where you have to setup sub namespace
 10) in template.js you can put objects you want to create into this.objects.
 I've created button named 'exampleButton' and text 'exampleText'
 
-11) you can get constructor of another class via Urso.getByPath(), 
-with path as argument. In our case we've stored text into config.js inside exampleComponent
+11) override method 'run' in app.js. To set your overrided app.js, in src/index.js
+add Urso.App.App = *your app.js*
 
-12) launch game. Pressing the button you'll see result
+12) In app.run use Urso.addInstancesMode('modeName') to add mode.
+For example we've added mode 'test'
+
+13) in component create folder named after mode name, add files you want to use with that mode.
+In _info.js setup sub namespace. In our exampleComponent we've created folder 'test', 
+and putted config.js in there
+
+14) now you can get instance of moded class using this.getInstance('instanceName') in controller.js.
+
+15) launch game. Pressing the button you'll see result

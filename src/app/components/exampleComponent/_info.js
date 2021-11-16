@@ -3,3 +3,5 @@ Urso.App.Components.ExampleComponent = {
     Template: require('./template.js'),
     Config: require('./config.js')
 };
+
+require('./test/_info.js')
