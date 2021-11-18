@@ -27,8 +27,8 @@ class AppTemplatesScenesPlay {
                 scaleY: 1.4,
                 anchorX: 0.5,
                 anchorY: 0.5,
-                x: 500,
-                y: 550,
+                alignX: 'center',
+                alignY: 'center'
             }]      
     };
 
