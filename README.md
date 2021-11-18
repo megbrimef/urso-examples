@@ -21,7 +21,8 @@ Play scene will use by default in our engine
 
 7) put button textures files into src/assets
 
-8) put textures data into this.assets in the play scene
+8) put textures data into this.assets in the play scene or in component's template.
+In this case i've created exampleComponent
 
 9) in the play scene put button object data into this.objects 
 
