@@ -8,17 +8,25 @@ class AppTemplatesScenesPlay {
 
         this.objects = [
             {
-                type: Urso.types.objects.MASK,
-                rectangle: [750, 550, 200, 700]
-            },
-            {
-                type: Urso.types.objects.IMAGE,
-                assetKey: 'bottle',
-                x: 500, y: 500,
-                scaleX: 3,
-                scaleY: 3
-            },
-
+                type: Urso.types.objects.CONTAINER,
+                alignX: 'center',
+                alignY: 'center',
+                contents: [
+                    {
+                        type: Urso.types.objects.MASK,
+                        rectangle: [-120, -200, 300, 900]
+                    },
+                    {
+                        type: Urso.types.objects.IMAGE,
+                        assetKey: 'bottle',
+                        acnhorX: 0.5,
+                        anchorY: 0.5,
+                        x: -300,
+                        scaleX: 3,
+                        scaleY: 3
+                    },
+                ]
+            }
         ];
     };
 
