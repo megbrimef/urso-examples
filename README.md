@@ -19,10 +19,10 @@ extendingChain uses for namespases extending.
 6) put template file (play.js) into app/templates/scenes.
 Play scene will use by default in our engine
 
-7) put object data into this.objects in the play scene. 
-Define hitArea's width and height
+7) create objects. For example we've created component hitAreaExample, in component's
+template was created 3 hitAreas and 1 text object. In controller was implemented logic
+that changing text on hitArea press.
 
-8) invisible interactive area will be created. By default hitArea have alpha 0, 
-you can choose alpha 1 to display area and set it more accurately.
+8) HitArea on default have alpha 0, you can choose alpha 1 to display area and set it more accurately.
 
 9) launch game and see result
