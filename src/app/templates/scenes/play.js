@@ -10,7 +10,10 @@ class AppTemplatesScenesPlay {
             {
                 type: Urso.types.objects.IMAGE,
                 assetKey: 'bottle',
-                x: 500, y: 500,
+                anchorX: 0.5,
+                anchorY: 0.5,
+                alignX: 'center',
+                alignY: 'center',
                 scaleX: 3,
                 scaleY: 3
             }
