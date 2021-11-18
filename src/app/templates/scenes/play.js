@@ -10,11 +10,13 @@ class AppTemplatesScenesPlay {
             {
                 type: Urso.types.objects.BITMAPTEXT,
                 fontName: 'exampleFont',
-                x: 500, y: 500,
+                alignX: 'center',
+                alignY: 'center',
+                anchorX: 0.5,
+                anchorY: 0.5,
                 text: '1 2 3',
                 fontSize: 100
             },
-
         ];
     };
 
