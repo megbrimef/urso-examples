@@ -8,33 +8,81 @@ class AppTemplatesScenesPlay {
 
         this.objects = [
             {
-                type: Urso.types.objects.SPINE,
-                name: 'coinPro1',
-                assetKey: 'coin',
+                type: Urso.types.objects.CONTAINER,
+                name: 'exampleContainer',
                 x: 300, y: 300,
-                scaleX: 1.5, scaleY: 1.5
+                contents: [
+                    {
+                        type: Urso.types.objects.TEXT,
+                        text: 'no animation',
+                        fontFamily: 'Arial',
+                        fontSize: 80,
+                        fill: '#ffffff',
+                        anchorX: 0.5,
+                        anchorY: 0.5,
+                        y: 280
+                    },
+                    {
+                        type: Urso.types.objects.SPINE,
+                        name: 'coinPro1',
+                        assetKey: 'coin',
+                        scaleX: 1.5, scaleY: 1.5
+                    },
+                ],
             },
             {
-                type: Urso.types.objects.SPINE,
-                name: 'coinPro2',
-                assetKey: 'coin',
-                x: 1500, y: 500,
-                scaleX: 1.5, scaleY: 1.5,
-                defaultAnimation: {
-                    name: 'animation'
-                }
+                type: Urso.types.objects.CONTAINER,
+                name: 'exampleContainer',
+                x: 1600, y: 300,
+                contents: [
+                    {
+                        type: Urso.types.objects.TEXT,
+                        text: 'animated once',
+                        fontFamily: 'Arial',
+                        fontSize: 80,
+                        fill: '#ffffff',
+                        anchorX: 0.5,
+                        anchorY: 0.5,
+                        y: 280
+                    },
+                    {
+                        type: Urso.types.objects.SPINE,
+                        name: 'coinPro2',
+                        assetKey: 'coin',
+                        scaleX: 1.5, scaleY: 1.5,
+                        animation: {
+                            name: 'animation'
+                        }
+                    },
+                ]
             },
             {
-                type: Urso.types.objects.SPINE,
-                name: 'coinPro3',
-                assetKey: 'coin',
-                x: 750, y: 750,
-                scaleX: 1.5, scaleY: 1.5,
-                defaultAnimation: {
-                    name: 'animation',
-                    loop: true
-                }
-            }
+                type: Urso.types.objects.CONTAINER,
+                name: 'exampleContainer',
+                x: 1000, y: 600,
+                contents: [
+                    {
+                        type: Urso.types.objects.TEXT,
+                        text: 'animation on loop',
+                        fontFamily: 'Arial',
+                        fontSize: 80,
+                        fill: '#ffffff',
+                        anchorX: 0.5,
+                        anchorY: 0.5,
+                        y: 280
+                    },
+                    {
+                        type: Urso.types.objects.SPINE,
+                        name: 'coinPro3',
+                        assetKey: 'coin',
+                        scaleX: 1.5, scaleY: 1.5,
+                        animation: {
+                            name: 'animation',
+                            loop: true
+                        }
+                    }
+                ]
+            },
         ];
     };
 
