@@ -13,7 +13,8 @@ class AppTemplatesScenesPlay {
                 type: Urso.types.objects.EMITTER,
                 cfg: 'emitterCfg',
                 textures: ['purple', 'blue'],
-                x: 500, y: 500,
+                alignX: 'center',
+                alignY: 'center',
                 autostart: true,
                 scaleX: 5,
                 scaleY: 5
