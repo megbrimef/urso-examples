@@ -21,4 +21,6 @@ Play scene will use by default in our engine
 
 6) put object data into this.objects in the play scene
 
-7) launch the game and you will see image
+7) you can change text's style inline or describing style inside of this.styles
+
+8) launch the game and you will see image
