@@ -11,7 +11,10 @@ class AppTemplatesScenesPlay {
                 type: Urso.types.objects.ATLASIMAGE,
                 assetKey: 'atlas',
                 filenameKey: "bottle.png",
-                x: 500, y: 500,
+                alignX: 'center',
+                alignY: 'center',
+                anchorX: 0.5,
+                anchorY: 0.5,
                 scaleX: 3,
                 scaleY: 3
             }
