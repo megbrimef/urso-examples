@@ -8,8 +8,8 @@ class ComponentsExampleComponentController extends Urso.Core.Components.Base.Con
         if(name !== 'exampleButton')
             return
 
-        this.text.x = Urso.math.getRandomIntBetween(500, 1000);
-        this.text.y = Urso.math.getRandomIntBetween(100, 1000);
+        this.text.x = Urso.math.getRandomIntBetween(0, 500);
+        this.text.y = Urso.math.getRandomIntBetween(-500, 500);
     }
 
     _subscribeOnce() {

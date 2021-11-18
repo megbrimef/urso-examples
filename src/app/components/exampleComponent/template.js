@@ -14,7 +14,7 @@ class ComponentsExampleComponentTemplate {
                 type: Urso.types.objects.BUTTON,
                 name: 'exampleButton',
                 x: 300,
-                y: 500,
+                alignY: 'center',
                 anchorX: 0.5,
                 anchorY: 0.5,
                 scaleX: 2,
@@ -33,8 +33,10 @@ class ComponentsExampleComponentTemplate {
                 fontFamily: 'Arial',
                 fontSize: 100,
                 fill: '#ffffff',
-                x: 700,
-                y: 600
+                anchorX: 0.5,
+                anchorY: 0.5,
+                alignX: 'center',
+                alignY: 'center'
             }
         ];
     }
