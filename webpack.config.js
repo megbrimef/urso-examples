@@ -44,16 +44,7 @@ module.exports = (env, argv) => {
         },
         inject: "head",
         hash: true,
-      }),
-      new CopyPlugin({
-        patterns: [
-          {
-            from: path.resolve(root, "src", "assets"),
-            to: "assets",
-            noErrorOnMissing: true
-          },
-        ],
-      }),
+      })
     ],
     module: {
       rules: [
