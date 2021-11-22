@@ -9,7 +9,7 @@ class AppTemplatesScenesPlay {
         this.objects = [
             {
                 type: Urso.types.objects.CONTAINER,
-                name: 'exampleContainer',
+                name: 'noAnimationContainer',
                 x: 300, y: 300,
                 contents: [
                     {
@@ -32,7 +32,7 @@ class AppTemplatesScenesPlay {
             },
             {
                 type: Urso.types.objects.CONTAINER,
-                name: 'exampleContainer',
+                name: 'animatedOnceContainer',
                 x: 1600, y: 300,
                 contents: [
                     {
@@ -58,7 +58,7 @@ class AppTemplatesScenesPlay {
             },
             {
                 type: Urso.types.objects.CONTAINER,
-                name: 'exampleContainer',
+                name: 'onLoopContainer',
                 x: 1000, y: 600,
                 contents: [
                     {
