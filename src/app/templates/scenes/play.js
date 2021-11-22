@@ -12,24 +12,96 @@ class AppTemplatesScenesPlay {
             },
         ];
 
-        this.objects = [ 
+        this.objects = [
             {
-                type: Urso.types.objects.DRAGONBONES,
-                name: 'dragonBones example',
-                assetKey: 'ghostDragonBones',
-                animation: {
-                    animationName: 'default',
-                    armatureName: 'skeleton',
-                    autoplay: true,
-                    loop: true
-                },
-                scaleX: 1.4,
-                scaleY: 1.4,
-                anchorX: 0.5,
-                anchorY: 0.5,
-                alignX: 'center',
-                alignY: 'center'
-            }]      
+                type: Urso.types.objects.CONTAINER,
+                name: 'exampleContainer',
+                x: 300, y: 300,
+                contents: [
+                    {
+                        type: Urso.types.objects.TEXT,
+                        text: 'no animation',
+                        fontFamily: 'Arial',
+                        fontSize: 80,
+                        fill: '#ffffff',
+                        anchorX: 0.5,
+                        anchorY: 0.5,
+                        y: 300
+                    },
+                    {
+                        type: Urso.types.objects.DRAGONBONES,
+                        name: 'dragonBones example',
+                        assetKey: 'ghostDragonBones',
+                        animation: {
+                            animationName: 'default',
+                            armatureName: 'skeleton',
+                        },
+                        anchorX: 0.5,
+                        anchorY: 0.5,
+
+                    },
+                ],
+            },
+            {
+                type: Urso.types.objects.CONTAINER,
+                name: 'exampleContainer',
+                x: 1600, y: 300,
+                contents: [
+                    {
+                        type: Urso.types.objects.TEXT,
+                        text: 'animated once',
+                        fontFamily: 'Arial',
+                        fontSize: 80,
+                        fill: '#ffffff',
+                        anchorX: 0.5,
+                        anchorY: 0.5,
+                        y: 300
+                    },
+                    {
+                        type: Urso.types.objects.DRAGONBONES,
+                        name: 'dragonBones example',
+                        assetKey: 'ghostDragonBones',
+                        animation: {
+                            animationName: 'default',
+                            armatureName: 'skeleton',
+                            autoplay: true,
+                        },
+                        anchorX: 0.5,
+                        anchorY: 0.5,
+                    },
+                ]
+            },
+            {
+                type: Urso.types.objects.CONTAINER,
+                name: 'exampleContainer',
+                x: 1000, y: 600,
+                contents: [
+                    {
+                        type: Urso.types.objects.TEXT,
+                        text: 'animation on loop',
+                        fontFamily: 'Arial',
+                        fontSize: 80,
+                        fill: '#ffffff',
+                        anchorX: 0.5,
+                        anchorY: 0.5,
+                        y: 300
+                    },
+                    {
+                        type: Urso.types.objects.DRAGONBONES,
+                        name: 'dragonBones example',
+                        assetKey: 'ghostDragonBones',
+                        animation: {
+                            animationName: 'default',
+                            armatureName: 'skeleton',
+                            autoplay: true,
+                            loop: true
+                        },
+                        anchorX: 0.5,
+                        anchorY: 0.5,
+                    }
+                ]
+            },
+        ]      
     };
 
 };
