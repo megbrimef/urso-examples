@@ -30,7 +30,7 @@ class AppTemplatesScenesPlay {
                     },
                     {
                         type: Urso.types.objects.DRAGONBONES,
-                        name: 'dragonBones example',
+                        name: 'dragonBonesExample1',
                         assetKey: 'ghostDragonBones',
                         animation: {
                             animationName: 'default',
@@ -59,7 +59,7 @@ class AppTemplatesScenesPlay {
                     },
                     {
                         type: Urso.types.objects.DRAGONBONES,
-                        name: 'dragonBones example',
+                        name: 'dragonBonesExample2',
                         assetKey: 'ghostDragonBones',
                         animation: {
                             animationName: 'default',
@@ -88,7 +88,7 @@ class AppTemplatesScenesPlay {
                     },
                     {
                         type: Urso.types.objects.DRAGONBONES,
-                        name: 'dragonBones example',
+                        name: 'dragonBonesExample3',
                         assetKey: 'ghostDragonBones',
                         animation: {
                             animationName: 'default',
