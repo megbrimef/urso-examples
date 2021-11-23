@@ -15,4 +15,3 @@ jsconfig.json
 /build
 /docs
 /yarn.lock
-server.js
