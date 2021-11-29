@@ -30,7 +30,7 @@ class AppTemplatesScenesPlay {
                 componentName: 'slotMachine',
                 x: 416, y: 63,
                 width: 790, height: 501,
-                options: {id: 'regular'},
+                options: {id: 'basic'},
             },
             {
                 type: Urso.types.objects.COMPONENT,
