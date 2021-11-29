@@ -16,6 +16,7 @@
 
 8) in this.objects on the play scene put components from slot-base you want to use
 
-9) in options of component 'slotMachine' put option 'id' with value 'drop'
+9) in options of component 'slotMachine' put option 'id' with value 'basicCascade' or 'cascadeDrop',
+depends on what spin type you want to use with dropes
 
 10) run the game. It will be loaded with spin type 'drop'
