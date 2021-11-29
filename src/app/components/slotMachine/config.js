@@ -11,9 +11,14 @@ class AppComponentsSlotMachineConfig extends Urso.BaseGame.Components.SlotMachin
             rowsCount: 3,
             borderSymbolsCount: 1,
             vectors: false, // or vectors length array like [5, 4, 3, 2, 1]  //todo
+            blackoutOnShowWinlines: true,
+            bounce: {
+                start: {moveTo: 100, duration: 200},
+                stop: {moveTo: 100, duration: 400},
+            },
 
-            rowsXoffset: false, // or array like [15, 20, 30, 40, 50]   //todo
-            rowsYoffset: false, // or array like [15, 20, 30, 40, 50]   //todo
+            rowsXoffset: false, // or array like [15, 20, 30, 40, 50]
+            rowsYoffset: false, // or array like [15, 20, 30, 40, 50]
 
             blurSymbolsCount: [5, 10, 15, 20, 25],
 
@@ -60,8 +65,8 @@ class AppComponentsSlotMachineConfig extends Urso.BaseGame.Components.SlotMachin
             borderSymbolsCount: 0,
             blurSymbolsCount: [0, 0, 0, 0, 0],
             dropTimings: {
-                start: {defaultDelay:50, rowsDelay:500, reelsDelay: 50},
-                stop: {defaultDelay:200, rowsDelay:500, reelsDelay: 50}
+                start: {defaultDelay:50, rowsDelay: 1000, reelsDelay: 50},
+                stop: {defaultDelay:200, rowsDelay: 1000, reelsDelay: 50}
             },
         }
     }

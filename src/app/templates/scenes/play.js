@@ -31,13 +31,6 @@ class AppTemplatesScenesPlay {
                 x: 416, y: 63,
                 width: 790, height: 501,
                 options: {id: 'regular'},
-                contents: [
-                    {
-                        type: Urso.types.objects.MASK,
-                        name: 'slotMachineMask',
-                        rectangle: [0, 0, 1270, 510]
-                    }
-                ]
             },
             {
                 type: Urso.types.objects.COMPONENT,

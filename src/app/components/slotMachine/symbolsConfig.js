@@ -1,4 +1,4 @@
-class AppComponentsSlotMachineSymbolsConfig extends Urso.BaseGame.Components.SlotMachine.Config {
+class AppComponentsSlotMachineSymbolsConfig extends Urso.BaseGame.Components.SlotMachine.SymbolsConfig {
 
     getSymbols() {
         const symbols = super.getSymbols();
@@ -6,7 +6,6 @@ class AppComponentsSlotMachineSymbolsConfig extends Urso.BaseGame.Components.Slo
         symbols.push(
             {
                 key: '9',
-                //FIXME: need to make more complex object { key, static: { blur, texture }, animation: { default: {...}, ... } } or like this
                 object: { type: Urso.types.objects.IMAGE, assetKey: '09', anchorX: 0.5, anchorY: 0.5 }
             },
             {
