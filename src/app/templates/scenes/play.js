@@ -6,8 +6,6 @@ class AppTemplatesScenesPlay {
 
         this.assets = [
             { type: Urso.types.assets.IMAGE, key: 'bgEx', path: `${_imagePath}/demostration1.jpg` },
-
-            // { type: Urso.types.assets.BITMAPFONT, key: 'winFont', path: _fontPath + 'bigWinFont.fnt' },
         ];
 
         this.objects = [
@@ -30,7 +28,7 @@ class AppTemplatesScenesPlay {
                 componentName: 'slotMachine',
                 x: 416, y: 63,
                 width: 790, height: 501,
-                options: {id: 'drop'},
+                options: {id: 'cascade'},
             },
             {
                 type: Urso.types.objects.COMPONENT,
@@ -66,9 +64,6 @@ class AppTemplatesScenesPlay {
                 assetKey: 'bgEx',
                 name: 'bgEx',
                 alpha: 0
-                // width: '100%',
-                // height: '100%',
-                // stretchingType: 'circumscribed'
             },
             {
                 type: Urso.types.objects.TEXT,

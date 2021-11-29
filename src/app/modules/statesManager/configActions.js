@@ -5,8 +5,8 @@ class ModulesStatesManagerConfigActions extends Urso.BaseGame.Modules.StatesMana
         this.contents.destroyWinSymbolsAndDropNew = {
             name: 'destroyWinSymbolsAndDropNew',
             events: {
-                onStart: 'components.slotMachine.cascade.start',
-                toComplete: 'components.slotMachine.cascade.finished'
+                onStart: 'components.slotMachine.drop.start',
+                toComplete: 'components.slotMachine.drop.finished'
             },
             isTerminable: false
         };
