@@ -39,6 +39,18 @@ class AppComponentsSlotMachineConfig extends Urso.BaseGame.Components.SlotMachin
         }
     }
 
+    getCascadeConfig() {
+        return {
+            spinType: 'cascade',
+            borderSymbolsCount: 0,
+            blurSymbolsCount: [0, 0, 0, 0, 0],
+            dropTimings: {
+                start: {defaultDelay:50, rowsDelay: 1000, reelsDelay: 50},
+                stop: {defaultDelay:200, rowsDelay: 1000, reelsDelay: 50}
+            },
+        }
+    }
+
 }
 
 module.exports = AppComponentsSlotMachineConfig;

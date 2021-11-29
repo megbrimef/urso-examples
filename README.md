@@ -16,9 +16,8 @@
 
 8) in this.objects on the play scene put components from slot-base you want to use
 
-9) in options of component 'slotMachine' put option 'id' with value 'basic' or 'basicDrop'
+9) in slotMachine component in config.js in method getDefaultConfig you can set spinStartInterval option,
+that described delay between reels start in ms. If you are using 'cascade' spin type, you can set dropTimings 
+for cascade start and stop (new symbols droping), including delay for rows and reels
 
-10) in slotMachine component in config.js in method getDefaultConfig you can set bounce settings for start and spin finish.
-Settings contents options moveTo - distance your symbols will bounce, and duration 
-
-11) run the game. It will be loaded with bounce
+10) run the game. It will be loaded with spin delay settings
