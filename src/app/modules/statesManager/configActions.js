@@ -1,4 +1,4 @@
-class ModulesStatesManagerConfigActions extends Urso.BaseGame.Modules.StatesManager.ConfigActions {
+class ModulesStatesManagerConfigActions extends Urso.SlotBase.Modules.StatesManager.ConfigActions {
     constructor() {
         super();
 

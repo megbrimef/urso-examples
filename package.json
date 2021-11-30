@@ -13,8 +13,7 @@
     "build:prod": "webpack --mode production"
   },
   "dependencies": {
-    "@urso/core": "^0.1.0",
-    "@urso/slot-base": "^0.1.0"
+    "@urso/slot-base": "^0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
