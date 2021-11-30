@@ -3,5 +3,5 @@ Urso.App.Modules.StatesManager = {
     ConfigActions: require('./configActions.js'),
 };
 
-require('./actions/_info')
+require('./actions/_info');
 

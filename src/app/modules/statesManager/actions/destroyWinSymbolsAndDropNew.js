@@ -4,7 +4,7 @@ class ModulesStatesManagerConfigStatesActionsShowWinlinesAnimateByOne extends Ur
         const autospinEnabled = Urso.localData.get('autospin.enabled');
         const slotMachineData = Urso.localData.get('slotMachine');
         const firstStageSlotWin = slotMachineData.spinStages[0].slotWin;
-        const isCascade = Urso.localData.get('components.slotMachine.isCascade');
+        const isCascade = Urso.localData.get('components.slotMachine.isDrop');
 
         return !autospinEnabled && firstStageSlotWin && firstStageSlotWin.lineWinAmounts.length && isCascade;
     }
