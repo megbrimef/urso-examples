@@ -2,19 +2,22 @@ class ModulesLogicMain extends Urso.SlotBase.Modules.Logic.Main {
 
     _hitAreaHandler = ({ name }) => {
         if(name === 'spin') {
-            Urso.observer.fire('components.slotMachine.spinCommand');
+            this.emit('components.slotMachine.spinCommand');
         }
     }
 
-    _spinStartedHandler = () => Urso.observer.fire('components.stateText.setState', 'spin');
-    _speedUpReelsHandler = () => Urso.observer.fire('components.stateText.setState', 'fastSpin');
-    _winlinesAnimateAllStartHandler = () => Urso.observer.fire('components.stateText.setState', 'win');
-    _winlinesAnimateByOneFinishedHandler = () => Urso.observer.fire('components.stateText.setState', 'idle');
+    _setTextState = (state) => this.emit('components.stateText.setState', state);
+
+    _spinStartedHandler = () => this._setTextState('spin');
+    _speedUpReelsHandler = () => this._setTextState('fastSpin');
+    
+    _winlinesAnimateAllStartHandler = () => this._setTextState('win');
+    _winlinesAnimateByOneFinishedHandler = () => this._setTextState('idle');
     
     _spinCompleteHandler = () => {
         const slotWin = Urso.localData.get('slotMachine.spinStages.0.slotWin');
         if(!slotWin) {
-            Urso.observer.fire('components.stateText.setState', 'idle');
+            this._setTextState('idle');
         }
     }
 
