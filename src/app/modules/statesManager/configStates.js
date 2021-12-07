@@ -1,35 +1,58 @@
 class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManager.ConfigStates {
     constructor() {
         super();
-
         this.contents = {
-            IDLE: {
+            RESET_UI: {
                 all: [
-                    { action: 'startSpin' }
+                    { action: 'setDefaultStateTextAction' }
                 ]
             },
 
-            SPIN_START: {
+            IDLE: { 
                 all: [
-                    { action: 'serverSpinRequest' },
-                    { action: 'slotMachineSpinStart' },
+                    { action: 'waitingForInteractionAction' }
                 ]
             },
 
-            SPIN_FINISHING: {
-                race: [
-                    { action: 'regularSpin' },
-                    { action: 'quickSpin' }
+            START_SPIN: {
+                sequence: [
+                    { action: 'setEmptyStateTextAction' },
+                    { action: 'regularSpinStartAction' },
+                    { action: 'serverSpinRequestAction' },
+                    { action: 'updateSlotMachineDataAction' }
                 ]
             },
 
-            WINLINES_ANIMATE_ALL: {
+            FINISH_SPIN: { 
+                sequence: [
+                    { action: 'setSpinStateTextAction' },
+                    { 
+                        race: [
+                            { action: 'finishingSpinAction' },
+                            { action: 'fastSpinAction' }
+                        ]
+                    },
+                    { action: 'setEmptyStateTextAction' }
+                ]
+            },
+
+            SHOW_WIN: {
                 all: [
-                    { action: 'showWinlinesAnimationAll' }
+                    { action: 'showWinlinesAnimationAllAction' }
                 ]
             },
 
-            WINLINES_ANIMATE_BY_ONE: { action: 'showWinlinesAnimationByOne' }
+            WINLINES_ANIMATE_BY_ONE: {
+                all: [
+                    { action: 'setWinStateTextAction' },
+                    {
+                        race: [
+                            { action: 'showWinlinesAnimationByOneAction' },
+                            { action: 'stopWinlinesAnimationAction'}
+                        ]
+                    }
+                ]   
+            }
         };
     };
 };
