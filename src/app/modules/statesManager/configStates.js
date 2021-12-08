@@ -1,51 +1,57 @@
-class ModulesStatesManagerConfigStates extends Urso.BaseGame.Modules.StatesManager.ConfigStates {
+class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManager.ConfigStates {
     constructor() {
         super();
-
         this.contents = {
-            IDLE: {
+            RESET_UI: {
                 all: [
-                    { action: 'startSpin' },
-                    { action: 'startAutospin' }
+                    { action: 'setDefaultStateTextAction' }
                 ]
             },
 
-            SPIN_START: {
+            IDLE: { 
                 all: [
-                    { action: 'resetWinField' },
-                    { action: 'balanceMakeBet' },
-                    { action: 'serverSpinRequest' },
-                    { action: 'slotMachineSpinStart' },
+                    { action: 'waitingForInteractionAction' }
                 ]
             },
 
-            SPIN_FINISHING: {
-                race: [
-                    { action: 'regularSpin' },
-                    { action: 'quickSpin' }
+            START_SPIN: {
+                sequence: [
+                    { action: 'setEmptyStateTextAction' },
+                    { action: 'regularSpinStartAction' },
+                    { action: 'serverSpinRequestAction' },
+                    { action: 'updateSlotMachineDataAction' }
                 ]
             },
 
-            WINLINES_ANIMATE_ALL: {
+            FINISH_SPIN: { 
+                sequence: [
+                    { action: 'setSpinStateTextAction' },
+                    { 
+                        race: [
+                            { action: 'finishingSpinAction' },
+                            { action: 'fastSpinAction' }
+                        ]
+                    },
+                    { action: 'setEmptyStateTextAction' }
+                ]
+            },
+
+            SHOW_WIN: {
                 all: [
-                    { action: 'counterUpdate' },
-                    { action: 'showWinlinesAnimationAll' }
+                    { action: 'showWinlinesAnimationAllAction' }
                 ]
             },
 
-            WINLINES_ANIMATE_BY_ONE: { action: 'showWinlinesAnimationByOne' },
-
-            DESTROY_WIN_SYMBOLS_AND_DROP_NEW: {
-                race: [
-                    { action: 'destroyWinSymbolsAndDropNew' },
-                    { action: 'quickSpin' }
-                ]
-            },
-
-            UPDATE_WIN: {
-                race: [
-                    { action: 'balanceReceived' },
-                ]
+            WINLINES_ANIMATE_BY_ONE: {
+                all: [
+                    { action: 'setWinStateTextAction' },
+                    {
+                        race: [
+                            { action: 'showWinlinesAnimationByOneAction' },
+                            { action: 'stopWinlinesAnimationAction'}
+                        ]
+                    }
+                ]   
             }
         };
     };

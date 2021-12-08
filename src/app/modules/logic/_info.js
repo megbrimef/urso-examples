@@ -1,2 +1,4 @@
-Urso.App.Modules.Logic = {};
-require('./config/_info')
+Urso.App.Modules.Logic = {
+    Main: require('./main')
+};
+
