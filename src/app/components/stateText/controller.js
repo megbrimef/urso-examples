@@ -1,30 +1,48 @@
-class ComponentsWinLinesController extends Urso.Core.Components.Base.Controller {
+class ComponentsWinLinesController extends Urso.Core.Components.StateDriven.Controller {
 
-    create = () => {
-        this._state = this._getStateOrDefault();
+    configActions = {
+        setDefaultStateTextAction: {
+            run: (finishClbk) => this._runSetStateAction('idle')(finishClbk),
+        },
+        setEmptyStateTextAction: {
+            run: (finishClbk) => this._runSetStateAction('empty')(finishClbk),
+        },
+        setSpinStateTextAction: {
+            run: (finishClbk) => this._runSetStateAction('spin')(finishClbk),
+            terminate: () => this._terminateSetSpinText()
+        },
+        setWinStateTextAction: {
+            run: (finishClbk) => this._runSetStateAction('win')(finishClbk),
+        }
     };
 
     set _state (text) {
         this.common.findOne('^text').text = text;
     };
 
-    _getStateOrDefault = (state) => {
+    _getStateOrDefault(state) {
         const statesTexts = {
+            empty: '',
             idle: 'CLICK/TAP ANYWHERE TO START SPIN',
             spin: 'CLICK/TAP ANYWHERE TO FORCE FAST SPIN',
-            fastSpin: 'WAITING SPIN TO FINISH',
-            win: 'CLICK/TAP ANYWHERE TO STOP WIN ANIMATION',
-            drop: 'DROPPING NEW SYMBOLS'
+            win: 'CLICK/TAP ANYWHERE TO STOP WIN ANIMATION'
         };
 
-        return statesTexts[state] || statesTexts.idle;
+        const textState = typeof statesTexts[state] !== 'undefined' ? state : 'idle';
+
+        return statesTexts[textState];
     };
 
-    _changeStateHandler = (state) => this._state = this._getStateOrDefault(state);
-
-    _subscribeOnce(){
-        this.addListener('components.stateText.setState', this._changeStateHandler);
-    };
+    _runSetStateAction(state){
+        return (finishClbk) => {
+            this._state = this._getStateOrDefault(state);
+            finishClbk();
+        }
+    }
+    _terminateSetSpinText() {
+        this._runSetStateAction('empty')();
+        this.callFinish('setSpinStateTextAction');
+    }
 }
 
 module.exports = ComponentsWinLinesController;
