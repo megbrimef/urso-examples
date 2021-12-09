@@ -9,10 +9,16 @@ class ComponentsWinLinesController extends Urso.Core.Components.StateDriven.Cont
         },
         setSpinStateTextAction: {
             run: (finishClbk) => this._runSetStateAction('spin')(finishClbk),
-            terminate: () => this._terminateSetSpinText()
         },
         setWinStateTextAction: {
             run: (finishClbk) => this._runSetStateAction('win')(finishClbk),
+        },
+        setFinishingStateTextAction: {
+            run: () => {},
+            terminate: () => this._runFinishingStateText()
+            //  {
+            //     this.callFinish('setFinishingStateTextAction')
+            // }
         }
     };
 
@@ -32,6 +38,11 @@ class ComponentsWinLinesController extends Urso.Core.Components.StateDriven.Cont
 
         return statesTexts[textState];
     };
+
+    _runFinishingStateText() {
+        this._state = this._getStateOrDefault('empty');
+        this.callFinish('setFinishingStateTextAction');
+    }
 
     _runSetStateAction(state){
         return (finishClbk) => {
