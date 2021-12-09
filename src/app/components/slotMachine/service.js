@@ -3,6 +3,7 @@ class ComponentsSlotMachineService extends Urso.SlotBase.Components.SlotMachine.
     constructor() {
         super();
         this._view = this.getInstance('Cascade');
+        this._view.setService(this);
     }
 }
 

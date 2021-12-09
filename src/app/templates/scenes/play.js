@@ -15,15 +15,17 @@ class AppTemplatesScenesPlay {
             },
             {
                 type: Urso.types.objects.COMPONENT,
-                name: 'winLinesCom',
                 componentName: 'winLines'
             },
             {
                 type: Urso.types.objects.COMPONENT,
-                name: 'stateTextCom',
                 componentName: 'stateText',
                 alignX: 'center',
                 y: 740,
+            },
+            {
+                type: Urso.types.objects.COMPONENT,
+                componentName: 'buttons'
             },
             {
                 type: Urso.types.objects.HITAREA,
@@ -31,6 +33,12 @@ class AppTemplatesScenesPlay {
                 width: 1920,
                 height: 1080
             },
+            {
+                type: Urso.types.objects.HITAREA,
+                name: 'stop',
+                width: 1920,
+                height: 1080
+            }
         ];
     };
 
