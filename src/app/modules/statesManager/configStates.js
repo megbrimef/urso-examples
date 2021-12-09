@@ -2,37 +2,52 @@ class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManag
     constructor() {
         super();
         this.contents = {
-            RESET_UI: {
+            IDLE: {
                 all: [
-                    { action: 'setDefaultStateTextAction' }
+                    { action: 'setDefaultStateTextAction' },
+                    { action: 'hideStopButtonAction' },
+                    { action: 'showSpinButtonAction' },
+                    {
+                        all: [
+                            {
+                                race: [
+                                    { action: 'waitingForInteractionAction' }
+                                ]
+                            },
+                            {
+                                race: [
+                                    { action: 'showWinlinesAnimationByOneAction' },
+                                    { action: 'stopWinlinesAnimationAction' }
+                                ]
+                            }
+                        ]
+                    }
                 ]
             },
 
-            IDLE: { 
-                all: [
-                    { action: 'waitingForInteractionAction' }
-                ]
-            },
-
-            START_SPIN: {
+            START_ROUND: {
                 sequence: [
                     { action: 'setEmptyStateTextAction' },
+                    { action: 'disableUiButtonsAction' },
+                    { action: 'hideSpinButtonAction' },
+                    { action: 'showStopButtonAction' },
+                    { action: 'balanceMakeBetAction' },
                     { action: 'regularSpinStartAction' },
                     { action: 'serverSpinRequestAction' },
-                    { action: 'updateSlotMachineDataAction' }
+                    { action: 'updateSlotMachineDataAction' },
                 ]
             },
 
-            FINISH_SPIN: { 
+            FINISH_SPIN: {
                 sequence: [
                     { action: 'setSpinStateTextAction' },
-                    { 
+                    {
                         race: [
                             { action: 'finishingSpinAction' },
-                            { action: 'fastSpinAction' }
+                            { action: 'fastSpinAction' },
+                            { action: 'setFinishingStateTextAction' }
                         ]
-                    },
-                    { action: 'setEmptyStateTextAction' }
+                    }
                 ]
             },
 
@@ -54,17 +69,12 @@ class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManag
                 nextState: ['SHOW_WIN']
             },
 
-            WINLINES_ANIMATE_BY_ONE: {
-                all: [
-                    { action: 'setWinStateTextAction' },
-                    {
-                        race: [
-                            { action: 'showWinlinesAnimationByOneAction' },
-                            { action: 'stopWinlinesAnimationAction'}
-                        ]
-                    }
-                ]   
-            }
+            FINISH_ROUND: {
+                sequence: [
+                    { action: 'serverBalanceRequestAction' }
+                ]
+            }  
+            
         };
     };
 };

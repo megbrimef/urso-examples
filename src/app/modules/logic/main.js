@@ -3,6 +3,8 @@ class ModulesLogicMain extends Urso.SlotBase.Modules.Logic.Main {
     _hitAreaHandler = ({ name }) => {
         if(name === 'spin') {
             this.emit('components.slotMachine.spinCommand');
+        } else if (name === 'stop') {
+            this.emit('components.slotMachine.stopCommand');
         }
     }
 
