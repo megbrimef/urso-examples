@@ -3,9 +3,7 @@ class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManag
         super();
         this.contents = {
             RESET_UI: {
-                all: [
-                    { action: 'setDefaultStateTextAction' }
-                ]
+                all: []
             },
 
             IDLE: { 
@@ -16,7 +14,6 @@ class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManag
 
             START_SPIN: {
                 sequence: [
-                    { action: 'setEmptyStateTextAction' },
                     { action: 'regularSpinStartAction' },
                     { action: 'serverSpinRequestAction' },
                     { action: 'updateSlotMachineDataAction' }
@@ -25,14 +22,12 @@ class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManag
 
             FINISH_SPIN: { 
                 sequence: [
-                    { action: 'setSpinStateTextAction' },
                     { 
                         race: [
                             { action: 'finishingSpinAction' },
                             { action: 'fastSpinAction' }
                         ]
-                    },
-                    { action: 'setEmptyStateTextAction' }
+                    }
                 ]
             },
 
@@ -42,21 +37,8 @@ class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManag
                 ]
             },
 
-            DROP: {
-                sequence: [
-                    { action: 'setEmptyStateTextAction' },
-                    { action: 'dropAction'},
-                    { action: 'regularSpinStartAction' },
-                    { action: 'serverSpinRequestAction' },
-                    { action: 'updateSlotMachineDataAction' },
-                    { action: 'finishingSpinAction' }
-                ],
-                nextState: ['SHOW_WIN']
-            },
-
             WINLINES_ANIMATE_BY_ONE: {
                 all: [
-                    { action: 'setWinStateTextAction' },
                     {
                         race: [
                             { action: 'showWinlinesAnimationByOneAction' },

@@ -2,35 +2,41 @@ class AppTemplatesScenesPlay {
     constructor() {
         this.styles = {};
 
-        this.assets = [];
+        this.assets = [
+            { type: Urso.types.assets.IMAGE, key: 'bg', path: 'images/background/basic.png' },
+        ];
 
         this.objects = [
+            {
+                type: Urso.types.objects.IMAGE,
+                assetKey: 'bg',
+            },
             {
                 type: Urso.types.objects.COMPONENT,
                 name: 'slotMachine',
                 componentName: 'slotMachine',
-                x: 382,
-                width: 1155, height: 693,
-                options: {id: 'basic'},
+                x: 320, y: 160,
+                width: 1270, height: 660,
+                options: {id: 'basic'}
             },
             {
                 type: Urso.types.objects.COMPONENT,
-                name: 'winLinesCom',
+                componentName: 'autoSpin',
+                x: 244,
+                y: 916
+            },
+            {
+                type: Urso.types.objects.GROUP,
+                groupName: 'uiGroup'
+            },
+            {
+                type: Urso.types.objects.COMPONENT,
                 componentName: 'winLines'
             },
             {
                 type: Urso.types.objects.COMPONENT,
-                name: 'stateTextCom',
-                componentName: 'stateText',
-                alignX: 'center',
-                y: 740,
-            },
-            {
-                type: Urso.types.objects.HITAREA,
-                name: 'spin',
-                width: 1920,
-                height: 1080
-            },
+                componentName: 'winCounter'
+            }
         ];
     };
 
