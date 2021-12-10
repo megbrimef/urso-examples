@@ -1,4 +1,4 @@
 Urso.App.Modules.StatesManager = {
-    // ConfigStates: require('./configStates.js')
+    ConfigStates: require('./configStates.js')
 };
 
