@@ -1,55 +1,85 @@
-class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManager.ConfigStates {
+class ModulesStatesManagerConfigStates extends Urso.Core.Modules.StatesManager.ConfigStates {
     constructor() {
         super();
+
         this.contents = {
-            RESET_UI: {
-                all: []
+            IDLE: {
+                all: [
+                    { action: 'enableUiButtonsAction' },
+                    { action: 'hideStopButtonAction' },
+                    { action: 'showSpinButtonAction' },
+                    { action: 'showWinAmountTextAction' },
+                    {
+                        all: [
+                            {
+                                race: [
+                                    
+                                    { action: 'autospinAction' },
+                                    { action: 'autospinCheckAction' },
+                                    { action: 'waitingForInteractionAction' }
+                                ]
+                            },
+                            {
+                                race: [
+                                    { action: 'showWinlinesAnimationByOneAction' }, 
+                                    { action: 'stopWinlinesAnimationAction' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
 
-            IDLE: { 
+            RESET_WIN_STATE: {
                 all: [
-                    { action: 'waitingForInteractionAction' }
+                    { action: 'resetWinTextAction' }
                 ]
             },
 
             START_SPIN: {
                 sequence: [
+                    { action: 'disableUiButtonsAction' },
+                    { action: 'hideSpinButtonAction' },
+                    { action: 'showStopButtonAction' },
+                    { action: 'balanceMakeBetAction' },
                     { action: 'regularSpinStartAction' },
                     { action: 'serverSpinRequestAction' },
                     { action: 'updateSlotMachineDataAction' }
                 ]
             },
 
-            FINISH_SPIN: { 
-                sequence: [
-                    { 
-                        race: [
-                            { action: 'finishingSpinAction' },
-                            { action: 'fastSpinAction' }
-                        ]
-                    }
+            FINISH_SPIN: {
+                race: [
+                    { action: 'finishingSpinAction' },
+                    { action: 'fastSpinAction' }
                 ]
             },
 
             SHOW_WIN: {
                 all: [
-                    { action: 'showWinlinesAnimationAllAction' }
+                    { action: 'showWinTextAction' },
+                    { action: 'showWinlinesAnimationAllAction' },
+                    {
+                        race: [
+                            { action: 'finishCounterAction' },
+                            { action: 'showWinCounterAction' }
+                        ]
+                    }
                 ]
             },
 
-            WINLINES_ANIMATE_BY_ONE: {
-                all: [
-                    {
-                        race: [
-                            { action: 'showWinlinesAnimationByOneAction' },
-                            { action: 'stopWinlinesAnimationAction'}
-                        ]
-                    }
-                ]   
+            FINISH_ROUND: {
+                sequence: [
+                    { action: 'serverBalanceRequestAction' }
+                ]
             }
         };
     };
-};
 
+    get() {
+        return this.contents;
+    };
+
+};
 
 module.exports = ModulesStatesManagerConfigStates;
