@@ -10,21 +10,12 @@ class ModulesStatesManagerConfigStates extends Urso.Core.Modules.StatesManager.C
                     { action: 'showSpinButtonAction' },
                     { action: 'showWinAmountTextAction' },
                     {
-                        all: [
-                            {
-                                race: [
-                                    
-                                    { action: 'autospinAction' },
-                                    { action: 'autospinCheckAction' },
-                                    { action: 'waitingForInteractionAction' }
-                                ]
-                            },
-                            {
-                                race: [
-                                    { action: 'showWinlinesAnimationByOneAction' }, 
-                                    { action: 'stopWinlinesAnimationAction' }
-                                ]
-                            }
+                        race: [                        
+                            { action: 'autospinAction' },
+                            { action: 'autospinCheckAction' },
+                            { action: 'waitingForInteractionAction' },
+                            { action: 'showWinlinesAnimationByOneAction' },
+                            { action: 'stopAllSymbolsAnimationAction' }
                         ]
                     }
                 ]

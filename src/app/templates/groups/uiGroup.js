@@ -1,4 +1,4 @@
-class AppTemplatesGroupsGroup {
+class AppTemplatesGroupsUiGroup {
     constructor() {
         const _uiPath = 'images/ui';
         const _fontsPath = 'fonts/';
@@ -302,4 +302,4 @@ class AppTemplatesGroupsGroup {
 
 };
 
-module.exports = AppTemplatesGroupsGroup;
+module.exports = AppTemplatesGroupsUiGroup;
