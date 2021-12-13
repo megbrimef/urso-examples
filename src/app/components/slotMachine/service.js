@@ -1,4 +1,4 @@
-class ComponentsSlotMachineService extends Urso.SlotBase.Components.SlotMachine.Service{
+class ComponentsSlotMachineService extends Urso.SlotBase.Components.SlotMachine.Service {
     
     constructor() {
         super();
