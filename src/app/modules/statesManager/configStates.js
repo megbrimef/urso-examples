@@ -8,18 +8,10 @@ class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManag
                     { action: 'hideStopButtonAction' },
                     { action: 'showSpinButtonAction' },
                     {
-                        all: [
-                            {
-                                race: [
-                                    { action: 'waitingForInteractionAction' }
-                                ]
-                            },
-                            {
-                                race: [
-                                    { action: 'showWinlinesAnimationByOneAction' },
-                                    { action: 'stopWinlinesAnimationAction' }
-                                ]
-                            }
+                        race: [
+                            { action: 'waitingForInteractionAction' },
+                            { action: 'showWinlinesAnimationByOneAction' },
+                            { action: 'stopAllSymbolsAnimationAction' }
                         ]
                     }
                 ]
@@ -31,10 +23,9 @@ class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManag
                     { action: 'disableUiButtonsAction' },
                     { action: 'hideSpinButtonAction' },
                     { action: 'showStopButtonAction' },
-                    { action: 'balanceMakeBetAction' },
                     { action: 'regularSpinStartAction' },
                     { action: 'serverSpinRequestAction' },
-                    { action: 'updateSlotMachineDataAction' },
+                    { action: 'updateSlotMachineDataAction' }
                 ]
             },
 
