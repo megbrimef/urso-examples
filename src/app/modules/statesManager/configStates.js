@@ -11,13 +11,9 @@ class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManag
                         all: [
                             {
                                 race: [
-                                    { action: 'waitingForInteractionAction' }
-                                ]
-                            },
-                            {
-                                race: [
+                                    { action: 'waitingForInteractionAction' },
                                     { action: 'showWinlinesAnimationByOneAction' },
-                                    { action: 'stopWinlinesAnimationAction' }
+                                    { action: 'stopAllSymbolsAnimationAction' }
                                 ]
                             }
                         ]
