@@ -7,21 +7,7 @@ class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManag
                     { action: 'setDefaultStateTextAction' },
                     { action: 'hideStopButtonAction' },
                     { action: 'showSpinButtonAction' },
-                    {
-                        all: [
-                            {
-                                race: [
-                                    { action: 'waitingForInteractionAction' }
-                                ]
-                            },
-                            {
-                                race: [
-                                    { action: 'showWinlinesAnimationByOneAction' },
-                                    { action: 'stopWinlinesAnimationAction' }
-                                ]
-                            }
-                        ]
-                    }
+                    { action: 'waitingForInteractionAction' }
                 ]
             },
 
