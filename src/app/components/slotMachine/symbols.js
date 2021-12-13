@@ -1,4 +1,4 @@
-class AppComponentsSlotMachineSymbolsConfig extends Urso.SlotBase.Components.SlotMachine.Symbols {
+class AppComponentsSlotMachineSymbols extends Urso.SlotBase.Components.SlotMachine.Symbols {
 
     get() {
       return [
@@ -46,4 +46,4 @@ class AppComponentsSlotMachineSymbolsConfig extends Urso.SlotBase.Components.Slo
     }
 }
 
-module.exports = AppComponentsSlotMachineSymbolsConfig;
+module.exports = AppComponentsSlotMachineSymbols;
