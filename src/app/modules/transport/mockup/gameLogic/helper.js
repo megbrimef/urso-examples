@@ -207,13 +207,12 @@ class Helper {
         return lineWinAmounts;
     };
 
-    _postprocessWinAmounts(lineWinAmounts, bonusGameData = {}) {
+    _postprocessWinAmounts(lineWinAmounts, bonusGameData = {}, { data }) {
         let totalWin = 0;
-        for (let i = 0; i < lineWinAmounts.length; i++)
+        for (let i = 0; i < lineWinAmounts.length; i++) {
             if (lineWinAmounts[i].amount)
                 totalWin += +lineWinAmounts[i].amount;
-
-        totalWin = totalWin.toFixed(2);
+        }
 
         const slotWin = totalWin > 0 || bonusGameData.newState && bonusGameData.newState !== 'Ready' ? {
             totalWin: totalWin,
@@ -293,17 +292,8 @@ class Helper {
     };
 
     getBalance() {
-        const { totalWin = 0 } = localData.get('gamble') || {};
-        const { amount, currency } = localData.get('balance');
-
-        localData.set('gamble', { totalWin: "0.00", canGamble: "false" });
-
-        const totalAmount = (+totalWin + +amount).toFixed(2);
-
-        return {
-            totalAmount: totalAmount,
-            currency: currency
-        }
+        const { amount: totalAmount, currency } = localData.get('balance');
+        return { totalAmount, currency };
     };
 
     getRandomInt(max) {

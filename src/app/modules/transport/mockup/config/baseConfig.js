@@ -8,7 +8,10 @@ const GambleResponse = require('../gameLogic/responses/gambleResponse');
 const gameConfig = {
     reconnectTimeout: 5000,
     starterBalance: 10000,
-    currency: 'USD',
+    currency: {
+        currentCurrency: 'USD',
+        currentSymbol: '$'
+    },
     responses: {
         ApiVersionRequest: ApiVersionResponse,
         CheckBrokenGameRequest: CheckBrokenGameResponse,
@@ -25,17 +28,16 @@ const gameConfig = {
         coinValues: [0.01, 0.02],
         defaultCoinValue: 0.01,
         defaultBet: 1,
-        defaultLines: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+        defaultLines: [1, 2, 3, 4, 5, 6, 7, 8, 9],
         avaliableLines: [
             [1, 1, 1, 1, 1], // 0
             [0, 0, 0, 0, 0], // 1
             [2, 2, 2, 2, 2], // 2
             [2, 2, 1, 2, 2], // 3
-            [0, 0, 1, 0, 0], // 4
-            [1, 0, 0, 0, 1], // 5
-            [1, 2, 2, 2, 1], // 6
-            [2, 1, 0, 1, 2], // 7
-            [0, 1, 2, 1, 0], // 8
+            [1, 0, 0, 0, 1], // 4
+            [1, 2, 2, 2, 1], // 5
+            [2, 1, 0, 1, 2], // 6
+            [0, 1, 2, 1, 0], // 7
         ],
         payouts: [
             { payout: 30, symbols: [0, 0, 0], type: 'basic' },
@@ -59,10 +61,10 @@ const gameConfig = {
             { payout: 10, symbols: [6, 6, 6], type: 'basic' },
             { payout: 50, symbols: [6, 6, 6, 6], type: 'basic' },
             { payout: 120, symbols: [6, 6, 6, 6, 6], type: 'basic' },
-            { payout: 4, symbols: [7, 7, 7], type: 'basic' },
+            { payout: 40, symbols: [7, 7, 7], type: 'basic' },
             { payout: 30, symbols: [7, 7, 7, 7], type: 'basic' },
             { payout: 100, symbols: [7, 7, 7, 7, 7], type: 'basic' },
-            { payout: 4, symbols: [8, 8, 8], type: 'basic' },
+            { payout: 40, symbols: [8, 8, 8], type: 'basic' },
             { payout: 30, symbols: [8, 8, 8, 8], type: 'basic' },
             { payout: 100, symbols: [8, 8, 8, 8, 8], type: 'basic' }
         ]
