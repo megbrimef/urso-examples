@@ -1,83 +1,52 @@
 class AppTemplatesScenesPlay {
     constructor() {
-        const _imagePath = 'assets/images/';
-
-        this.styles = {}
-
-        this.assets = [
-            { type: Urso.types.assets.IMAGE, key: 'bgEx', path: `${_imagePath}/demostration1.jpg` },
-
-            // { type: Urso.types.assets.BITMAPFONT, key: 'winFont', path: _fontPath + 'bigWinFont.fnt' },
-        ];
+        this.assets = [];
 
         this.objects = [
             {
                 type: Urso.types.objects.COMPONENT,
-                componentName: 'deviceRotate'
+                componentName: 'loader',
             },
             {
                 type: Urso.types.objects.COMPONENT,
-                componentName: 'fullscreen'
+                componentName: 'autoSpin',
             },
             {
                 type: Urso.types.objects.COMPONENT,
-                name: 'bgCom',
-                componentName: 'background'
+                componentName: 'ui',
             },
             {
                 type: Urso.types.objects.COMPONENT,
                 name: 'slotMachine',
                 componentName: 'slotMachine',
-                x: 416, y: 63,
-                width: 790, height: 501,
+                x: 382,
+                width: 1155, height: 693,
                 options: {id: 'basic'},
             },
             {
                 type: Urso.types.objects.COMPONENT,
-                name: 'winLinesCom',
                 componentName: 'winLines'
             },
             {
-                type: Urso.types.objects.ATLASIMAGE,
-                assetKey: 'bg',
-                filenameKey: 'background4.png',
-                name: 'bg4',
-                x: 397,
-                y: 50
-            },
-            {
                 type: Urso.types.objects.COMPONENT,
-                name: 'winCounterCom',
-                componentName: 'winCounter'
+                componentName: 'stateText',
+                alignX: 'center',
+                y: 740,
             },
             {
-                type: Urso.types.objects.COMPONENT,
-                name: 'autoSpinCom',
-                componentName: 'autoSpin'
-            },
-
-            {
-                type: Urso.types.objects.GROUP,
-                name: 'uiGroup',
-                groupName: 'uiGroup'
+                type: Urso.types.objects.HITAREA,
+                action: () => Urso.observer.fire('modules.logic.ui.interact.done'),
+                class: 'skipButton',
+                width: 1920,
+                height: 1080
             },
             {
-                type: Urso.types.objects.IMAGE,
-                assetKey: 'bgEx',
-                name: 'bgEx',
-                alpha: 0
-                // width: '100%',
-                // height: '100%',
-                // stretchingType: 'circumscribed'
-            },
-            {
-                type: Urso.types.objects.TEXT,
-                fontFamily : 'Arial', fontSize: 12, fill : 0xffffff, align : 'center',
-                name: 'ver',
-                text: 'v 6',
-                x: 1580,
-                y: 730
-            },
+                type: Urso.types.objects.HITAREA,
+                action: () => Urso.observer.fire('modules.logic.ui.interact.done'),
+                class: 'spinButton',
+                width: 1920,
+                height: 1080
+            }
         ];
     };
 

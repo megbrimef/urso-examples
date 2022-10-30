@@ -1,50 +1,56 @@
-class ModulesStatesManagerConfigStates extends Urso.BaseGame.Modules.StatesManager.ConfigStates {
+class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManager.ConfigStates {
     constructor() {
         super();
-
         this.contents = {
             IDLE: {
                 all: [
-                    { action: 'startSpin' },
-                    { action: 'startAutospin' }
+                    { action: 'setDefaultStateTextAction' },
+                    { action: 'hideStopButtonAction' },
+                    { action: 'showSpinButtonAction' },
+                    {
+                        race: [
+                            { action: 'waitingForInteractionAction' },
+                            { action: 'showWinlinesAnimationByOneAction' },
+                            { action: 'stopAllSymbolsAnimationAction' }
+                        ]
+                    }
                 ]
             },
 
-            SPIN_START: {
+            START_ROUND: {
+                sequence: [
+                    { action: 'setEmptyStateTextAction' },
+                    { action: 'disableUiButtonsAction' },
+                    { action: 'hideSpinButtonAction' },
+                    { action: 'showStopButtonAction' },
+                    { action: 'regularSpinStartAction' },
+                    { action: 'serverSpinRequestAction' },
+                    { action: 'updateSlotMachineDataAction' }
+                ]
+            },
+
+            FINISH_SPIN: {
+                sequence: [
+                    { action: 'setSpinStateTextAction' },
+                    {
+                        race: [
+                            { action: 'finishingSpinAction' },
+                            { action: 'fastSpinAction' },
+                            { action: 'setFinishingStateTextAction' }
+                        ]
+                    }
+                ]
+            },
+
+            SHOW_WIN: {
                 all: [
-                    { action: 'resetWinField' },
-                    { action: 'balanceMakeBet' },
-                    { action: 'serverSpinRequest' },
-                    { action: 'slotMachineSpinStart' },
+                    { action: 'showWinlinesAnimationAllAction' }
                 ]
             },
 
-            SPIN_FINISHING: {
-                race: [
-                    { action: 'regularSpin' },
-                    { action: 'quickSpin' }
-                ]
-            },
-
-            WINLINES_ANIMATE_ALL: {
-                all: [
-                    { action: 'counterUpdate' },
-                    { action: 'showWinlinesAnimationAll' }
-                ]
-            },
-
-            WINLINES_ANIMATE_BY_ONE: { action: 'showWinlinesAnimationByOne' },
-
-            DESTROY_WIN_SYMBOLS_AND_DROP_NEW: {
-                race: [
-                    { action: 'destroyWinSymbolsAndDropNew' },
-                    { action: 'quickSpin' }
-                ]
-            },
-
-            UPDATE_WIN: {
-                race: [
-                    { action: 'balanceReceived' },
+            FINISH_ROUND: {
+                sequence: [
+                    { action: 'serverBalanceRequestAction' }
                 ]
             }
         };
