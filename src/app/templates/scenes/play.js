@@ -1,10 +1,20 @@
 class AppTemplatesScenesPlay {
     constructor() {
-        this.styles = {};
-
         this.assets = [];
 
         this.objects = [
+            {
+                type: Urso.types.objects.COMPONENT,
+                componentName: 'loader',
+            },
+            {
+                type: Urso.types.objects.COMPONENT,
+                componentName: 'autoSpin',
+            },
+            {
+                type: Urso.types.objects.COMPONENT,
+                componentName: 'ui',
+            },
             {
                 type: Urso.types.objects.COMPONENT,
                 name: 'slotMachine',
@@ -24,18 +34,16 @@ class AppTemplatesScenesPlay {
                 y: 740,
             },
             {
-                type: Urso.types.objects.COMPONENT,
-                componentName: 'buttons'
-            },
-            {
                 type: Urso.types.objects.HITAREA,
-                name: 'spin',
+                action: () => Urso.observer.fire('modules.logic.ui.interact.done'),
+                class: 'skipButton',
                 width: 1920,
                 height: 1080
             },
             {
                 type: Urso.types.objects.HITAREA,
-                name: 'stop',
+                action: () => Urso.observer.fire('modules.logic.ui.interact.done'),
+                class: 'spinButton',
                 width: 1920,
                 height: 1080
             }
