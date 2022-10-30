@@ -1,51 +1,95 @@
 class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManager.ConfigStates {
     constructor() {
         super();
+
         this.contents = {
-            IDLE: {
-                all: [
-                    { action: 'setDefaultStateTextAction' },
-                    { action: 'hideStopButtonAction' },
-                    { action: 'showSpinButtonAction' },
-                    { action: 'waitingForInteractionAction' }
-                ]
+            INIT_GAME: {
+                sequence: [
+                    {
+                        all: [
+                            {
+                                sequence: [
+                                    { action: 'updateServerSettingsAction' },
+                                    { action: 'transportInitAction' },
+                                    { action: 'serverApiVersionRequestAction' },
+                                    { action: 'serverCheckBrokenGameRequestAction' },
+                                    { action: 'serverAuthRequestAction' },
+                                    { action: 'serverBalanceRequestAction' },
+                                ],
+                            },
+                            {
+                                sequence: [
+                                    { action: 'loadDefaultSceneAction' },
+                                    { action: 'finishGameInitAction' }
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        all: [
+                            { action: 'initUiLogicAction' },
+                            { action: 'updateBalanceAction' },
+                            { action: 'updateBetLinesAction' },
+                            { action: 'hideLoaderAction' },
+                        ],
+                    },
+                ],
             },
 
-            START_ROUND: {
+            IDLE: {
+                race: [
+                    { action: 'showWinlinesAnimationByOneAction' },
+                    { action: 'waitingForInteractionAction' },
+                    { action: 'resumeAutospinAction' },
+                ],
+            },
+
+            RESET_WIN_STATE: {
+                all: [
+                    { action: 'resetWinTextAction' },
+                ],
+            },
+
+            START_SPIN: {
                 sequence: [
-                    { action: 'setEmptyStateTextAction' },
-                    { action: 'disableUiButtonsAction' },
-                    { action: 'hideSpinButtonAction' },
-                    { action: 'showStopButtonAction' },
-                    { action: 'balanceMakeBetAction' },
+                    { action: 'makeBetAction' },
                     { action: 'regularSpinStartAction' },
                     { action: 'serverSpinRequestAction' },
                     { action: 'updateSlotMachineDataAction' },
-                ]
+                ],
             },
 
             FINISH_SPIN: {
-                sequence: [
-                    { action: 'setSpinStateTextAction' },
-                    {
-                        race: [
-                            { action: 'finishingSpinAction' },
-                            { action: 'fastSpinAction' },
-                            { action: 'setFinishingStateTextAction' }
-                        ]
-                    }
-                ]
+                race: [
+                    { action: 'finishingSpinAction' },
+                    { action: 'waitingForInteractionAction' },
+                ],
             },
 
             SHOW_WIN: {
-                all: [
-                    { action: 'showWinlinesAnimationAllAction' }
-                ]
+                sequence: [
+                    {
+                        all: [
+                            { action: 'showWinlinesAnimationAllAction' },
+                            {
+                                race: [
+                                    { action: 'waitingForInteractionAction' },
+                                    { action: 'showWinCounterAction' },
+                                ],
+                            },
+                        ]
+                    },
+                    { action: 'updateWinTextAction' },
+                    { 
+                        all: [
+                            { action: 'serverBalanceRequestAction' },
+                        ]
+                    },
+                ]        
             },
 
             DROP: {
                 sequence: [
-                    { action: 'setEmptyStateTextAction' },
                     { action: 'dropAction'},
                     { action: 'regularSpinStartAction' },
                     { action: 'serverSpinRequestAction' },
@@ -54,16 +98,12 @@ class ModulesStatesManagerConfigStates extends Urso.SlotBase.Modules.StatesManag
                 ],
                 nextState: ['SHOW_WIN']
             },
-
-            FINISH_ROUND: {
-                sequence: [
-                    { action: 'serverBalanceRequestAction' }
-                ]
-            }  
-            
         };
-    };
-};
+    }
 
+    get() {
+        return this.contents;
+    }
+}
 
 module.exports = ModulesStatesManagerConfigStates;

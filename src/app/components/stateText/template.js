@@ -14,7 +14,8 @@ class ComponentsStateTextTemplate {
                 name: 'text',
                 class: 'yellow',
                 anchorX: 0.5,
-                anchorY: 0.5
+                anchorY: 0.5,
+                text: ''
             },
         ];
     }
