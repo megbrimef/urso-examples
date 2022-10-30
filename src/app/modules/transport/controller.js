@@ -1,13 +1,17 @@
 const Mockup = require('../transport/mockup/mockup');
 
-class GameModulesLogicTransportController extends Urso.Core.Modules.Transport.Controller {
+class GameModulesLogicTransportController extends Urso.SlotBase.Modules.Transport.Controller {
 
     constructor() {
         super();
 
         this._responceHandler = null;
         this._mockup = new Mockup();
+    }
 
+    init() {
+        super.init();
+        this.emit('modules.transport.ready');
     }
 
     setResponseHandler(handler) {

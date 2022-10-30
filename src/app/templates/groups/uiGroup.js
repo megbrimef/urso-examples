@@ -27,9 +27,6 @@ class AppTemplatesGroupsUiGroup {
             '.linesVal': {
                 fontSize: 32,
             },
-            '.btn-over': {
-                // fill: '#D1D1D1',
-            },
             '.btn-press': {
                 fill: '#34383A',
             }
@@ -61,19 +58,8 @@ class AppTemplatesGroupsUiGroup {
                 name: 'uiContainer', 
                 contents: [
                     {
-                        type: Urso.types.objects.COMPONENT,
-                        componentName: 'buttons'
-                    },
-                    {
-                        type: Urso.types.objects.COMPONENT,
-                        name: 'betCom',
-                        componentName: 'bet'
-                    },
-                    {
                         type: Urso.types.objects.BUTTON,
-                        name: 'spin',
-                        class: 'uiButton',
-                        action: () => Urso.observer.fire('components.slotMachine.spinCommand'),
+                        class: 'uiButton spinButton',
                         x: 1675,
                         y: 916,
                         anchorX: 0.5,
@@ -88,9 +74,7 @@ class AppTemplatesGroupsUiGroup {
 
                     {
                         type: Urso.types.objects.BUTTON,
-                        name: 'stop',
-                        class: 'uiButton',
-                        action: () => Urso.observer.fire('components.slotMachine.stopCommand'),
+                        class: 'uiButton skipButton',
                         x: 1675,
                         y: 916,
                         anchorX: 0.5,
@@ -102,7 +86,26 @@ class AppTemplatesGroupsUiGroup {
                             disabled: 'spinUnpressed'
                         },
                     },
-    
+
+                    {
+                        type: Urso.types.objects.TOGGLE,
+                        class: 'uiButton autoButton',
+                        x: 244,
+                        y: 916,
+                        anchorX: 0.5,
+                        anchorY: 0.5,
+                        buttonFrames: {
+                            pressedOver: 'autoPressed',
+                            pressedOut: 'autoPressed',
+                            pressedDisabled: 'autoPressed',
+                            pressedDown: 'autoPressed',
+                            unpressedOver: 'autoUnpressed',
+                            unpressedOut: 'autoUnpressed',
+                            unpressedDown: 'autoUnpressed',
+                            unpressedDisabled: 'autoUnpressed'
+                        },
+                    },
+
                     {
                         type: Urso.types.objects.IMAGE,
                         x: 680,
@@ -112,9 +115,7 @@ class AppTemplatesGroupsUiGroup {
                     },
                     {
                         type: Urso.types.objects.BUTTON,
-                        name: 'lines',
-                        class: 'uiButton disableable',
-                        action: () => Urso.observer.fire('components.lines.switch'),
+                        class: 'uiButton lineIncreaseCircularButton',
                         x: 680,
                         y: 924,
                         anchorX: 1,
@@ -136,18 +137,12 @@ class AppTemplatesGroupsUiGroup {
                         y: 922,
                         wordWrapWidth: 440
                     },
-
                     {
                         type: Urso.types.objects.CONTAINER,
                         name: 'linesPanelContainer',
                         x: 545,
                         y: 840,
                         contents: [
-                            {
-                                type: Urso.types.objects.COMPONENT,
-                                name: 'linesCom',
-                                componentName: 'lines'
-                            },
                             {
                                 type: Urso.types.objects.TEXT,
                                 anchorX: 0.5,
@@ -161,9 +156,7 @@ class AppTemplatesGroupsUiGroup {
                     },
                     {
                         type: Urso.types.objects.BUTTON,
-                        name: 'oneBet',
-                        class: 'uiButton disableable',
-                        action: () => Urso.observer.fire('components.bet.switch', { type: 'one' }),
+                        class: 'uiButton betIncreaseCircularButton',
                         x: 750,
                         y: 974,
                         anchorX: 1,
@@ -178,7 +171,7 @@ class AppTemplatesGroupsUiGroup {
                         type: Urso.types.objects.TEXT,
                         anchorX: 0.5,
                         anchorY: 0.5,
-                        class: 'baseUi btn-text oneBet',
+                        class: 'baseUi btn-text',
                         text: 'BET ONE',
                         x: 619,
                         y: 1017,
@@ -186,9 +179,7 @@ class AppTemplatesGroupsUiGroup {
                     },
                     {
                         type: Urso.types.objects.BUTTON,
-                        name: 'maxBet',
-                        class: 'uiButton disableable',
-                        action: () => Urso.observer.fire('components.bet.switch', { type: 'max' }),
+                        class: 'uiButton betMaxButton',
                         x: 1430,
                         y: 974,
                         anchorX: 1,
@@ -216,11 +207,6 @@ class AppTemplatesGroupsUiGroup {
                         y: 85,
                         contents: [
                             {
-                                type: Urso.types.objects.COMPONENT,
-                                name: 'balanceCom',
-                                componentName: 'balance'
-                            },
-                            {
                                 type: Urso.types.objects.IMAGE,
                                 assetKey: 'creditPanel',
                                 anchorX: 0.5,
@@ -241,11 +227,6 @@ class AppTemplatesGroupsUiGroup {
                         x: 1462,
                         y: 85,
                         contents: [
-                            {
-                                type: Urso.types.objects.COMPONENT,
-                                name: 'totalBetCom',
-                                componentName: 'totalBet'
-                            },
                             {
                                 type: Urso.types.objects.IMAGE,
                                 name: 'totalBetPanel',
@@ -269,10 +250,6 @@ class AppTemplatesGroupsUiGroup {
                         y: 947,
                         contents: [
                             {
-                                type: Urso.types.objects.COMPONENT,
-                                componentName: 'winField'
-                            },
-                            {
                                 type: Urso.types.objects.IMAGE,
                                 name: 'winFieldPanel',
                                 assetKey: 'winFieldPanel',
@@ -281,17 +258,20 @@ class AppTemplatesGroupsUiGroup {
                             },
                             {
                                 type: Urso.types.objects.TEXT,
-                                class: 'baseUi winFieldValue',
+                                class: 'baseUi winVal',
                                 text: '',
                                 y: 65,
+                                fontSize: 40,
+                                maxWidth: 200,
                                 wordWrapWidth: 440
                             },
                             {
                                 type: Urso.types.objects.TEXT,
                                 class: 'baseUi cheeringText',
-                                text: '',
+                                text: 'Good Luck',
                                 y: 10,
-                                wordWrapWidth: 440
+                                wordWrapWidth: 440,
+                                maxWidth: 200
                             }
                         ]
                     }

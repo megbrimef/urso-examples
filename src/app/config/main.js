@@ -2,3 +2,4 @@
 Urso.config.extendingChain = ['Urso.Core', 'Urso.SlotBase', 'Urso.App'];
 Urso.config.title = 'Slot Game';
 Urso.config.defaultScene = 'play';
+Urso.config.useTransport = true;

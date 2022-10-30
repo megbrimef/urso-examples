@@ -8,6 +8,10 @@ class AppTemplatesScenesPlay {
 
         this.objects = [
             {
+                type: Urso.types.objects.COMPONENT,
+                componentName: 'loader'
+            },
+            {
                 type: Urso.types.objects.IMAGE,
                 assetKey: 'bg',
             },
@@ -22,8 +26,6 @@ class AppTemplatesScenesPlay {
             {
                 type: Urso.types.objects.COMPONENT,
                 componentName: 'autoSpin',
-                x: 244,
-                y: 916
             },
             {
                 type: Urso.types.objects.GROUP,
@@ -36,6 +38,10 @@ class AppTemplatesScenesPlay {
             {
                 type: Urso.types.objects.COMPONENT,
                 componentName: 'winCounter'
+            },
+            {
+                type: Urso.types.objects.COMPONENT,
+                componentName: 'ui'
             }
         ];
     };
