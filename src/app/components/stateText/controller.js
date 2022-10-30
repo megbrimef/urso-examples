@@ -6,7 +6,7 @@ class ComponentsWinLinesController extends Urso.Core.Components.Base.Controller 
     _getStateOrDefault(state) {
         const statesTexts = {
             IDLE: 'CLICK/TAP ANYWHERE TO START SPIN',
-            SHOW_WIN: 'CLICK/TAP ANYWHERE TO FORCE FAST SPIN'
+            FINISH_SPIN: 'CLICK/TAP ANYWHERE TO FORCE FAST SPIN'
         };
 
         const textState = typeof statesTexts[state] !== 'undefined' ? state : '';
