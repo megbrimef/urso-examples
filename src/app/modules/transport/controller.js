@@ -1,6 +1,6 @@
 const Mockup = require('../transport/mockup/mockup');
 
-class GameModulesLogicTransportController extends Urso.SlotBase.Modules.Transport.Controller {
+class GameModulesTransportController extends Urso.SlotBase.Modules.Transport.Controller {
 
     constructor() {
         super();
@@ -30,4 +30,4 @@ class GameModulesLogicTransportController extends Urso.SlotBase.Modules.Transpor
     };
 };
 
-module.exports = GameModulesLogicTransportController;
+module.exports = GameModulesTransportController;
